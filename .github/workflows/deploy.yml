@@ -30,6 +30,9 @@ jobs:
     - name: Reinstall Bundler
       run: gem install bundler
 
+    - name: Set repository environment variable
+      run: echo "PAGES_REPO_NWO=${{ github.repository }}" >> $GITHUB_ENV
+
     - name: Install dependencies
       run: |
         bundle install  
@@ -37,6 +40,7 @@ jobs:
     - name: Install deps
       run: |
         npm install -g mermaid.cli
+
     - name: Setup deploy options
       id: setup
       run: |
