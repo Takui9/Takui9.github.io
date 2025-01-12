@@ -5,7 +5,7 @@ permalink: /
 subtitle: A master's student at EPFL, working on robot control.
 profile:
   align: right
-  image: prof_zewei.jpg
+  image: prof_zewei.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
     zewei.zhang@epfl.ch | ctki49@gmail.com
