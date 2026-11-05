@@ -1,0 +1,8 @@
+<header class="site-header{% unless page.nav_key == 'home' %} site-header-solid{% endunless %}">
+  <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Zewei Zhang home">Zewei Zhang</a>
+  <nav aria-label="Main navigation">
+    <a href="{{ '/' | relative_url }}"{% if page.nav_key == 'home' %} aria-current="page"{% endif %}>Home</a>
+    <a href="{{ '/projects/' | relative_url }}"{% if page.nav_key == 'projects' %} aria-current="page"{% endif %}>Projects</a>
+    <a href="{{ '/papers/' | relative_url }}"{% if page.nav_key == 'papers' %} aria-current="page"{% endif %}>Papers</a>
+  </nav>
+</header>

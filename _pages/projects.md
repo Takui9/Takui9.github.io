@@ -1,58 +1,41 @@
 ---
-layout: page
-title: projects
+layout: research-page
+title: Projects
 permalink: /projects/
-description: A collection of previous projects.
-nav: false
-nav_order: 2
-display_categories: [computer vision]
-horizontal: true
+nav_key: projects
+description: Zewei Zhang's research on adapting motion priors through CPG parameter optimization, residual policies, and terrain-aware motion generation.
 ---
-
-<!-- pages/projects.md -->
-<div class="projects">
-{%- if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {%- for category in page.display_categories %}
-  <h2 class="category">{{ category }}</h2>
-  {%- assign categorized_projects = site.projects | where: "category", category -%}
-  {%- assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
-  <div class="container">
-    <div class="row row-cols-2">
-    {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
-    {%- endfor %}
+<header class="page-heading">
+  <h1>Projects</h1>
+  <p>{{ site.data.research.story.intro }}</p>
+</header>
+<nav class="project-index" aria-label="Research studies">
+  {% for study in site.data.research.story.studies %}<a href="#{{ study.id }}">{{ study.short_title }}</a>{% endfor %}
+</nav>
+{% for study in site.data.research.story.studies %}
+  {% assign paper = site.data.research.papers | where: 'id', study.paper_id | first %}
+  <article class="project-study" id="{{ study.id }}">
+    <figure class="project-media">
+      <div class="project-frame{% if study.id == 'rhythms' %} project-cpg{% endif %}">
+        <video class="experiment-video" muted loop playsinline controls preload="none" poster="{{ paper.poster | relative_url }}" aria-label="{{ paper.media_alt | escape }}"><source src="{{ paper.preview | relative_url }}" type="video/mp4"></video>
+      </div>
+      <figcaption>{{ study.robot }} · {{ paper.venue }} {{ paper.year }}</figcaption>
+    </figure>
+    <div class="project-copy">
+      <p class="project-meta">{{ paper.year }} · {{ study.lab }}</p>
+      <h2>{{ study.title }}</h2>
+      {% for paragraph in study.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+      <dl class="project-facts"><dt>Prior</dt><dd>{{ study.prior }}</dd><dt>Adaptation</dt><dd>{{ study.adaptation }}</dd><dt>Robot</dt><dd>{{ study.robot }}</dd></dl>
+      <div class="related-paper"><span>Related paper</span><a href="{{ '/papers/' | relative_url }}#{{ paper.id }}">{{ paper.title }}</a></div>
+      {% if paper.project_url %}<a class="external-project" href="{{ paper.project_url }}">Full project page ↗</a>{% endif %}
     </div>
-  </div>
-  {%- else -%}
-  <div class="grid">
-    {%- for project in sorted_projects -%}
-      {% include projects.html %}
-    {%- endfor %}
-  </div>
-  {%- endif -%}
-  {% endfor %}
-
-{%- else -%}
-<!-- Display projects without categories -->
-  {%- assign sorted_projects = site.projects | sort: "importance" -%}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
-  <div class="container">
-    <div class="row row-cols-2">
-    {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
-    {%- endfor %}
-    </div>
-  </div>
-  {%- else -%}
-  <div class="grid">
-    {%- for project in sorted_projects -%}
-      {% include projects.html %}
-    {%- endfor %}
-  </div>
-  {%- endif -%}
-{%- endif -%}
-</div>
+  </article>
+{% endfor %}
+<section class="related-collaboration" aria-labelledby="related-collaboration-title">
+  <h2 id="related-collaboration-title">Related collaboration</h2>
+  <p>I am also a coauthor of <a href="{{ '/papers/' | relative_url }}#acp">Humanoid Mobility via Attention-based Contacts</a>, which studies whole-body humanoid mobility through contact planning.</p>
+</section>
+<section class="project-earlier" aria-labelledby="earlier-projects-title">
+  <h2 id="earlier-projects-title">Earlier projects</h2>
+  <ul><li><a href="{{ '/cpg_rl.html' | relative_url }}">Reinforcement learning for quadruped locomotion with CPGs</a></li><li><a href="https://www.youtube.com/watch?v=Zbv3JhjAxHA">Drone navigation with onboard sensors</a></li></ul>
+</section>

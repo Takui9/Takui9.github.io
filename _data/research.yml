@@ -1,0 +1,103 @@
+# Verified Zewei Zhang publications only. Order: newest first within year.
+papers:
+  - id: acp
+    year: 2026
+    venue: arXiv
+    status: Under review
+    first_author: false
+    title: Humanoid Mobility via Attention-based Contacts
+    authors: [Junzhe He, Kehan Wen, Chong Zhang, Clemens Schwarke, Zewei Zhang, Kaixian Qu, Siyuan Hu, Matthias Müller, Vladlen Koltun, Marco Hutter]
+    paper_url: https://arxiv.org/abs/2610.31608
+    project_url: https://leggedrobotics.github.io/ACP/
+    citation: /assets/citations/acp.bib
+    summary: An attention-based contact planner and contact-conditioned controller for whole-body humanoid mobility.
+
+  - id: wholebody
+    project_id: human
+    year: 2026
+    venue: RA-L
+    first_author: true
+    title: Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking
+    authors: [Zewei Zhang, Kehan Wen, Michael Xu, Junzhe He, Chenhao Li, Takahiro Miki, Clemens Schwarke, Chong Zhang, Xue Bin Peng, Marco Hutter]
+    paper_url: https://arxiv.org/abs/2604.17335
+    project_url: https://wholebodylocomotion.github.io/
+    video_url: https://youtu.be/OY61TiDoj4I
+    citation: /assets/citations/wholebody.bib
+    preview: /assets/video/human-adaptation.mp4
+    poster: /assets/img/human-poster.jpg
+    media_alt: Unitree G1 climbing up and down a box
+    summary: A terrain-aware motion generator adapts human motion priors for coordinated whole-body locomotion on a G1 humanoid, using onboard perception and computation.
+
+  - id: animal-priors
+    project_id: animal
+    year: 2025
+    venue: CoRL
+    first_author: true
+    title: "Motion Priors Reimagined: Adapting Flat-Terrain Skills for Complex Quadruped Mobility"
+    authors: [Zewei Zhang, Chenhao Li, Takahiro Miki, Marco Hutter]
+    paper_url: https://arxiv.org/abs/2505.16084
+    project_url: https://anymalprior.github.io/
+    citation: /assets/citations/animal-priors.bib
+    preview: /assets/video/animal-adaptation.mp4
+    poster: /assets/img/animal-poster.jpg
+    media_alt: ANYmal walking on grass with adapted animal motion priors
+    summary: A high-level residual policy adapts dog motion priors to uneven terrain, stairs, and goal-directed navigation on ANYmal.
+
+  - id: cpg
+    project_id: rhythms
+    year: 2024
+    venue: IROS
+    status: Oral presentation
+    first_author: true
+    title: Online Optimization of Central Pattern Generators for Quadruped Locomotion
+    authors: [Zewei Zhang, Guillaume Bellegarda, Milad Shafiee, Auke Ijspeert]
+    paper_url: https://arxiv.org/abs/2410.16417
+    video_url: https://youtu.be/4qq5leCI2AI
+    citation: /assets/citations/cpg.bib
+    preview: /assets/video/cpg-adaptation.mp4
+    poster: /assets/img/cpg-poster.jpg
+    media_alt: Online optimization experiments with central pattern generators
+    summary: Online Bayesian optimization adapts biologically inspired CPG parameters to changing commands, terrain conditions, and payloads on a Go1 quadruped.
+
+story:
+  intro: >-
+    My research investigates how motion priors can support locomotion when commands,
+    terrain, and task requirements change. These three studies examine different
+    locations for adaptation: the parameters of a biologically inspired controller,
+    a high-level policy built on animal skills, and terrain-aware references
+    generated from human motion. Together, they explore how to retain useful
+    movement structure while responding to the environment.
+  studies:
+    - id: rhythms
+      paper_id: cpg
+      title: Online adaptation of CPG parameters
+      short_title: Parameter optimization
+      lab: EPFL BioRob
+      prior: Biologically inspired CPG
+      adaptation: Online parameter optimization
+      robot: Unitree Go1
+      paragraphs:
+        - Central pattern generators provide a compact, biologically inspired structure for rhythmic locomotion. Their parameters still need to match the robot’s commands and operating conditions.
+        - At EPFL’s BioRob, I investigated online Bayesian optimization of these parameters, enabling a quadruped to adapt to changes in target velocity, ground friction, slope, and payload. Hardware experiments on the Unitree Go1 examine adaptation directly on the robot. Here, the motion structure remains a CPG, while its parameters change through real-world interaction.
+    - id: animal
+      paper_id: animal-priors
+      title: Residual adaptation of animal motion priors
+      short_title: Residual adaptation
+      lab: ETH Zurich RSL
+      prior: Dog motion capture
+      adaptation: High-level residual policy
+      robot: ANYmal
+      paragraphs:
+        - Animal motion capture provides reusable locomotion skills, but imitation on flat ground does not by itself address uneven terrain. This work first trains a low-level policy to imitate dog motion, establishing reusable movement skills.
+        - A high-level, goal-conditioned policy then learns residual corrections that adapt those skills to terrain and navigation requirements. Experiments on ANYmal demonstrate stair traversal, uneven-ground locomotion, and local navigation. Adaptation operates through the residual policy while retaining the movement structure supplied by the animal prior.
+    - id: human
+      paper_id: wholebody
+      title: Terrain-aware generation from human motion priors
+      short_title: Motion generation
+      lab: ETH Zurich RSL
+      prior: Retargeted human motion
+      adaptation: Terrain-aware reference generation
+      robot: Unitree G1
+      paragraphs:
+        - Human motion provides coordinated whole-body skills, but fixed reference trajectories cannot accommodate every terrain arrangement. This framework uses a diffusion model to generate terrain-aware motion references and a learned tracker to execute them on a humanoid.
+        - The tracker is trained with reinforcement learning, then fine-tuned in closed loop with the motion generator frozen. The motion generator conditions its references on terrain; the framework does not use a separate residual adaptation policy. Onboard experiments on the Unitree G1 demonstrate coordinated traversal of boxes, hurdles, stairs, and mixed terrain.

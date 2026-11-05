@@ -8,7 +8,7 @@ middle_name:
 last_name: Zhang
 email: ctki49@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Robotics research by Zewei Zhang: adapting motion priors to real-world demands, from quadruped locomotion to humanoid whole-body control.
 footer_text:
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 #   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -19,7 +19,8 @@ lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: icon.png  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://Takui9.github.io # the base hostname & protocol for your site
-baseurl: # the subpath of your site, e.g. /blog/
+baseurl: "" # root-level GitHub Pages site
+repository: Takui9/Takui9.github.io
 github:
   repository: Takui9/Takui9.github.io
 last_updated: false # set to true if you want to display last updated in the footer
@@ -175,6 +176,29 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+  - scripts
+  - HOMEPAGE.md
+  - HOMEPAGE_PROGRESS.md
+  - README.md
+  - INSTALL.md
+  - CUSTOMIZE.md
+  - FAQ.md
+  - CONTRIBUTING.md
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose-slim.yml
+  - requirements.txt
+  - purgecss.config.js
+  - lighthouse_results
+  - readme_preview
+  # Inherited demonstration content, not Zewei's work.
+  - _posts
+  - _projects
+  - _news
+  - _pages/cv.md
+  - _pages/teaching.md
+  - _pages/repositories.md
+  - _pages/dropdown.md
 keep_files:
   - CNAME
   - .nojekyll
@@ -234,8 +258,8 @@ display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will
 
 scholar:
 
-  last_name: [Shi]
-  first_name: [Kexin]
+  last_name: [Zhang]
+  first_name: [Zewei]
 
   style: apa
   locale: en

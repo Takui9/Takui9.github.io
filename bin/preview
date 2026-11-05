@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Preview the whole Jekyll site locally; production configuration stays untouched.
+set -euo pipefail
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$repo_root"
+if [[ -d /opt/homebrew/opt/ruby@3.3/bin ]]; then
+  export PATH="/opt/homebrew/opt/ruby@3.3/bin:$PATH"
+fi
+export BUNDLE_PATH="$repo_root/vendor/bundle"
+preview_dir="$(mktemp -d "${TMPDIR:-/tmp}/zewei-preview.XXXXXX")"
+preview_config="$preview_dir/config.yml"
+trap 'rm -f "$preview_config"; rmdir "$preview_dir"' EXIT
+cat > "$preview_config" <<'YAML'
+url: http://127.0.0.1:4000
+baseurl: ""
+# Original images work without ImageMagick; avoid changing or generating assets.
+imagemagick:
+  enabled: false
+jekyll-minifier:
+  compress_javascript: false
+include:
+  - _pages
+  - _homepage-progress.html
+
+YAML
+if ! bundle check > /dev/null 2>&1; then
+  echo 'Installing the dependencies needed for the local preview...'
+  bundle install
+fi
+bundle exec jekyll serve --config "_config.yml,$preview_config" \
+  --host 127.0.0.1 --port "${PORT:-4000}" --livereload
