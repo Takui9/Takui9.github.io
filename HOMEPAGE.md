@@ -2,8 +2,9 @@
 
 The homepage uses `_layouts/research-home.html`, `assets/css/research-home.css`,
 and `assets/js/research-home.js`. `_pages/about.md` retains the root permalink.
-The other Jekyll pages keep their existing layouts. No frontend build step or
-production dependency was added.
+The research pages share the new layout; the CPG project page keeps its original
+layout. CI uses Ruby 3.3, locked gems, and ImageMagick; no frontend build step is
+required.
 
 ## Research pages and shared content
 
@@ -61,8 +62,8 @@ structure, and CSS layout. No browser screenshot was available: the browser
 connector was unavailable and native Computer Use permission was not granted.
 This is source-level design approval, not pixel-level browser verification.
 
-The approved 45-second teaser and 80.5-second full reel were not modified in the
-layout redesign. The player retains explicit play/pause, reduced-motion and data
+The teaser was subsequently refined to 47 seconds; the 80.5-second full reel
+was preserved. The player retains explicit play/pause, reduced-motion and data
 saving preferences, offscreen pausing, and hidden-tab pausing. Scene selection UI,
 numbered maps, decorative status dots, slogans, and repeated method headlines were
 removed. The generated cue manifests remain editing records rather than homepage
@@ -121,7 +122,8 @@ and HTML/JSON cue parity passed validation. File hashes confirm the full reel an
 chapter videos are unchanged; decoded-frame hashes confirm the three retained
 teaser scenes are pixel-identical to the previous cut.
 The selection review uses chronological sampled frames; browser playback and
-the complete Jekyll build remain unverified in this environment.
+the complete Jekyll build was subsequently verified with production settings.
+Browser rendering remains unverified in this environment.
 
 ### Full research reel (80.5 seconds)
 

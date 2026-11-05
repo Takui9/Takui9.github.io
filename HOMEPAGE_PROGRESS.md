@@ -1,6 +1,6 @@
 # Homepage rebuild — milestone log
 
-Last updated: 2026-11-05 (Asia/Shanghai)
+Last updated: 2026-11-06 (Asia/Shanghai)
 
 ## Goal
 
@@ -15,16 +15,18 @@ GitHub Pages deployment workflow.
 | --- | --- | --- |
 | 1. Audit content and reference | Complete | Reviewed existing biography, three research publications, linked project pages, and reference homepage. |
 | 2. Refine research narrative | Complete | GPT-6 Astra helped refine three adaptation mechanisms: parameters, residual corrections, generated references. Incorporated user's correction to center adaptation. |
-| 3. Implement homepage | Complete | Custom Jekyll layout, responsive editorial styling, research map, three research chapters, formal citations, biography, contact links, earlier projects. |
-| 4. Produce research teaser | Complete | Astra implemented the latest 45-second silent teaser with straight grass walking, the landscape two-step demonstration, and an earlier mixed-terrain ending. Preserved the 80.5-second full reel and chapter videos. |
+| 3. Implement homepage | Complete | Personal-first homepage, responsive shared layout, Projects adaptation storyline, complete Papers index, biography and contact links. |
+| 4. Produce research teaser | Complete | Astra selected and reviewed the final 47-second teaser; root encoded it. Straight grass walking, selected two-step descent/ascent cycle, navigation and humanoid climbing. Full reel and chapter videos preserved. |
 | 5. Review and validate | Complete | Template rendered successfully for root and subpath hosting; HTML structure, anchors, local assets, JS syntax, and full decode of all four videos passed. Astra reviewed source and poster, identifying mobile heading spacing and footage cropping; both fixed. Playback smoke checks also passed: visibility, manual pause persistence, scene seeking and labels, reduced-motion and data-saving preferences, and offscreen chapter pausing. |
-| 6. Browser review and deployment | Pending / environment limited | Browser host unavailable. Full Jekyll dependencies are not installed locally. No commit, push, or deployment has been performed. |
+| 6. Production build and deployment | Complete | Production Jekyll build and both GitHub publication runs succeeded. Root verified public pages/resources and approved video hashes. Astra found no production-package blockers and approved handoff. Browser UI inspection remains unavailable. |
 
 ## Current work
 
-Latest result: Astra directly implemented the 45-second revision. Full decode, cue parity, and preservation checks passed. Browser rendering remains unverified. Open `_homepage-progress.html` for the visual dashboard; it refreshes automatically every 15 seconds.
-Browser rendering and the full Jekyll build remain unverified; do not interpret
-source-level checks as a visual browser review.
+Latest result: the approved site has been published at https://takui9.github.io/.
+GitHub build and Pages deployment both succeeded. Public resource/content checks
+passed, and Astra approved handoff without blockers. The local visual dashboard is
+`_homepage-progress.html`; it refreshes every 15 seconds. Actual browser
+rendering remains unverified because browser/Computer Use access is unavailable.
 
 ## Main files
 
@@ -223,4 +225,27 @@ CV, demo projects/posts/news and template instructions from the published site.
 Scholar identity corrected to Zewei. Production repository/baseurl made explicit.
 CI aligned to the locally verified Ruby 3.3 environment, with a committed
 Mac/Linux dependency lock and explicit image conversion tools. Production build
-with native image generation/minification passed. Publishing is in progress.
+with native image generation/minification passed.
+
+
+## Published — 2026-11-05
+
+- Live site: https://takui9.github.io/ (Home, Projects, Papers).
+- Published source: `150cf479ca7d` (`main`).
+- Deploy: https://github.com/Takui9/Takui9.github.io/actions/runs/42040161232 — success.
+- Pages: https://github.com/Takui9/Takui9.github.io/actions/runs/42040397558 — success.
+- Public checks passed: page structure/navigation, local resources and anchors,
+  complete author lists, first-author/coauthor roles, adaptation-method nuance,
+  and absence of inherited template records from the three research pages.
+- The 47-second teaser and 80.5-second full reel downloaded from the live site
+  match the approved source SHA-256 checksums. Teaser HTTP range request returns
+  206, supporting seek/streaming. The sitemap contains the four intended routes.
+- Internal progress/docs/scripts and inherited CV/teaching/repository pages
+  return 404, as intended.
+- The live Home/Projects/Papers HTML is byte-identical to the reviewed local
+  production build. Fresh public snapshots are saved at `/tmp/zewei-live-review/`.
+- Astra approved the production package and handoff with no blockers or further
+  changes recommended. Its own public fetch returned stale content/access errors;
+  fresh-live verification was performed by root, not independently by Astra.
+- Browser visual inspection remains unavailable under this environment's
+  browser/Computer Use restrictions.
