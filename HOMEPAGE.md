@@ -414,3 +414,31 @@ and [Pages 42179424752](https://github.com/Takui9/Takui9.github.io/actions/runs/
 succeeded. All eight public HTML pages, component CSSv2, switching JS and 30
 linked local resources passed live checks. Astra independently compared the
 public Home/CSS/JS to the approved build and gave post-merge approval.
+
+
+## About education and research timelines
+
+A privately supplied CV establishes exact months for two education records and
+three earlier research placements. Only the selected public facts are stored
+in `_data/career.yml`; the CV itself, contact details, personal status and the
+excluded recent placement are not copied into the repository or public site.
+Supervisor names retain the provenance of Zewei's original biography.
+
+Astra recommended two independent vertical timelines below the About summary:
+Education on the left, Research experience on the right. They are ordered by
+end date within each group; <=860px stacks Education before Research. This
+represents overlapping placements without falsely tying the whole RSL period
+to the master's degree. The original portrait remains, and the biography is
+shortened to a research-interest sentence and personal interests.
+
+`_includes/career-timeline.html` renders both groups. The About-only
+`assets/css/about-timeline.css` spans the parent grid while containing its own
+rows, so the older mobile about-copy display-contents rules do not scatter its
+entries. The layout uses fine lines and small markers with no logos, cards,
+animation or extra interaction. Only the industrial research placement needs
+one sentence of background; academic results stay in the publications area.
+
+Astra approved the actual production text, filtered facts, dates, roles and CSS
+compatibility. All five records and explicit exclusions passed checks; other
+seven HTML pages remain unchanged. Review is based on generated HTML/data/CSS,
+not browser visual testing.

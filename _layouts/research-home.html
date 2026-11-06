@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>{% include research-head.html %}</head>
+<head>{% include research-head.html %}<link rel="stylesheet" href="{{ '/assets/css/about-timeline.css' | relative_url }}"></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {% include research-nav.html %}
@@ -22,10 +22,19 @@
   <section class="about section wrap" id="about" aria-labelledby="about-title">
     <div class="about-copy">
       <h2 id="about-title">About me</h2>
-      <p>During my MSc at EPFL, I worked with <a href="https://www.epfl.ch/labs/biorob/people/ijspeert/">Prof. Auke Ijspeert</a> at the <a href="https://www.epfl.ch/labs/biorob/">Biorobotics Laboratory</a> and <a href="https://rsl.ethz.ch/the-lab/people.html">Prof. Marco Hutter</a> at <a href="https://rsl.ethz.ch/">ETH Zurich’s Robotic Systems Lab</a>.</p>
-      <p>Before EPFL, I completed my bachelor’s degree at Waseda University in Tokyo, focusing on space exploration. Outside research, I enjoy basketball and hotpot.</p>
+      <p>I study how motion priors can be adapted for legged locomotion and whole-body control. Outside research, I enjoy basketball and hotpot.</p>
     </div>
     <img class="portrait" src="{{ '/assets/img/prof_zewei.jpeg' | relative_url }}" alt="Zewei Zhang" width="160" height="190" loading="lazy">
+    <div class="about-timelines">
+      <section class="timeline-group" aria-labelledby="education-title">
+        <h3 id="education-title">Education</h3>
+        {% include career-timeline.html stages=site.data.career.education label='Education, most recent first' %}
+      </section>
+      <section class="timeline-group" aria-labelledby="research-experience-title">
+        <h3 id="research-experience-title">Research experience</h3>
+        {% include career-timeline.html stages=site.data.career.research label='Research experience, most recent first' %}
+      </section>
+    </div>
   </section>
 
   <section class="publications section wrap" id="research" aria-labelledby="research-title">

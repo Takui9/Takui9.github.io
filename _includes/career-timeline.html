@@ -1,0 +1,13 @@
+<ol class="career-timeline" aria-label="{{ include.label }}">
+  {% for stage in include.stages %}
+  <li>
+    <span class="timeline-date">{{ stage.period }}</span>
+    <div class="timeline-entry">
+      <h4><a href="{{ stage.institution_url }}"{% if stage.institution_label %} aria-label="{{ stage.institution_label | escape }}"{% endif %}>{{ stage.institution }}</a></h4>
+      <p class="timeline-role">{{ stage.role }}{% if stage.supervisor %} · With <a href="{{ stage.supervisor_url }}">{{ stage.supervisor }}</a>{% endif %}{% if stage.role_location %} · {{ stage.role_location }}{% endif %}</p>
+      {% if stage.location %}<span class="timeline-location">{{ stage.location }}</span>{% endif %}
+      {% if stage.description %}<p class="timeline-description">{{ stage.description }}</p>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ol>

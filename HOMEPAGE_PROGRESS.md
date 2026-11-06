@@ -439,3 +439,21 @@ All eight public HTML pages and selector CSS/JS match the approved build;
 30 local resources return 200. Astra's independent public snapshot comparison
 and post-merge check passed. No further changes required; browser real-media
 playback testing remains unavailable.
+
+
+## About timelines — approved, publishing
+
+User requested a visual career timeline below About and supplied a private CV
+with one explicit placement exclusion. Root verified the source visually, using
+only five selected education/earlier-research records and precise months. The
+excluded placement, private contacts/status and the original CV are not included
+in the source or published materials.
+
+Astra revised the layout to two independent timelines: Education (2 entries) and
+Research experience (3 entries), stacked at 860px. This cleanly shows overlapping
+studies/placements and keeps RSL's period independent of the MSc. About text was
+condensed without changing the portrait or research publications.
+
+Astra's generated-page/data/CSS review approved the exact dates, roles, advisors
+and layout without changes. Root verified 5 records, exclusions, chronology and
+7 unchanged pages. Publishing through the existing main-branch workflow.

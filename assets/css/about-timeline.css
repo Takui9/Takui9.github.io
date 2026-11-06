@@ -1,0 +1,26 @@
+/* Independent education and research timelines within About. */
+.about { row-gap: 32px; }
+.about-timelines { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; min-width: 0; }
+.timeline-group { min-width: 0; }
+.timeline-group > h3 { font-size: 19px; font-weight: 600; margin-bottom: 22px; }
+.career-timeline { list-style: none; margin: 0; padding: 0; }
+.career-timeline > li { position: relative; padding: 0 0 25px 23px; }
+.career-timeline > li:last-child { padding-bottom: 0; }
+.career-timeline > li:not(:last-child)::before { content: ''; position: absolute; left: 3px; top: 9px; bottom: -8px; width: 1px; background: var(--line); }
+.career-timeline > li::after { content: ''; position: absolute; left: 0; top: 5px; width: 7px; height: 7px; border: 1px solid #8da6c8; border-radius: 50%; background: #fff; }
+.timeline-date { display: block; font-size: 12px; line-height: 1.85; color: var(--muted); font-variant-numeric: tabular-nums; margin-bottom: 4px; }
+.timeline-entry { min-width: 0; }
+.timeline-entry h4 { margin: 0 0 3px; font-size: 16px; font-weight: 600; line-height: 1.5; }
+.timeline-entry h4 a { color: var(--ink); }
+.timeline-entry .timeline-role { font-size: 14px; line-height: 1.7; }
+.timeline-location { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.timeline-entry .timeline-description { font-size: 13px; margin-top: 5px; color: #4b5661; }
+@media (max-width: 860px) {
+  .about-timelines { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+}
+@media (max-width: 700px) {
+  .about { row-gap: 20px; }
+  .about-timelines { margin-top: 8px; }
+  .timeline-group > h3 { font-size: 18px; margin-bottom: 20px; }
+  .timeline-entry h4 { font-size: 15px; }
+}
