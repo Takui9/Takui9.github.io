@@ -22,12 +22,11 @@ GitHub Pages deployment workflow.
 
 ## Current work
 
-Latest result: the full text/factual revision is live at https://takui9.github.io/.
-Astra approved all four generated pages. Their public HTML is byte-identical to
-the reviewed production build; the 19 linked local resources, deployed stylesheet,
-and teaser streaming checks passed. Pages deployment `42161954567` succeeded.
-The local visual dashboard is `_homepage-progress.html`; it refreshes every
-15 seconds. This revision was reviewed as text, not as a new browser visual test.
+Latest result: only the Projects tab's Related collaboration was reformatted
+as a compact ACP project entry and published. Astra approved its actual rendered
+text. The public Projects HTML/CSS matches the build; Home, Papers, and CPG-RL
+remain byte-identical to their prior reviewed output. Pages run `42168030909`
+succeeded. Local dashboard: `_homepage-progress.html` (refreshes every 15 seconds).
 
 ## Main files
 
@@ -298,7 +297,7 @@ Final publication:
   corrections. All original videos remain unchanged.
 
 
-## Projects collaboration entry — reviewed, publishing
+## Projects collaboration entry — published
 
 User requested only the Projects tab's Related collaboration section use a
 compact project-entry format, and asked Astra to review its text. The new entry
@@ -311,3 +310,8 @@ coauthor label and under-review status. Production generation passed; Home,
 Papers and CPG-RL HTML are byte-identical to the prior reviewed build. CSS changes
 are limited to the new Projects entry's class. Publishing the two changed public
 files only: Projects HTML and its stylesheet.
+
+Publication completed: source `a68a64bf9798`, public build `c0ae7577a4fc`;
+Pages run https://github.com/Takui9/Takui9.github.io/actions/runs/42168030909
+succeeded. Fresh public Projects HTML and CSS match the approved output. Home,
+Papers, and CPG-RL remain byte-identical to their previous reviewed output.
