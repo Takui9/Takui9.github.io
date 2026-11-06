@@ -442,3 +442,10 @@ Astra approved the actual production text, filtered facts, dates, roles and CSS
 compatibility. All five records and explicit exclusions passed checks; other
 seven HTML pages remain unchanged. Review is based on generated HTML/data/CSS,
 not browser visual testing.
+
+Published from `93f04e1fab58` in build `0d40ab25e80d`;
+[Pages deployment 42183109267](https://github.com/Takui9/Takui9.github.io/actions/runs/42183109267)
+succeeded. All eight public pages and the timeline CSS match the reviewed build,
+and 31 linked local resources passed. Astra independently approved the merged
+public About/date/role/style implementation with no changes. Private source
+intermediates were removed after review; the original supplied PDF is preserved.

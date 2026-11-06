@@ -22,12 +22,11 @@ GitHub Pages deployment workflow.
 
 ## Current work
 
-Latest result: the homepage defaults to the humanoid explainer, with three
-manual buttons for Humanoid, Quadruped and CPG. Switching pauses the previous
-film, updates text/links/credit and captions, and never autoplays the next film.
-Source and minified DOM tests passed. Astra approved the generated version and
-independently rechecked the published Home/CSS/JS. All eight public pages and
-30 resources passed live checks. Local dashboard: `_homepage-progress.html`.
+Latest result: About now includes two compact education and research timelines
+with five source-verified records and exact months. Astra approved the design,
+wording and fresh public version after merge. The specified recent placement and
+private source data were excluded. All eight public pages, timeline CSS and
+31 resources passed release checks. Local dashboard: `_homepage-progress.html`.
 
 ## Main files
 
@@ -441,7 +440,7 @@ and post-merge check passed. No further changes required; browser real-media
 playback testing remains unavailable.
 
 
-## About timelines — approved, publishing
+## About timelines — published and post-merge approved
 
 User requested a visual career timeline below About and supplied a private CV
 with one explicit placement exclusion. Root verified the source visually, using
@@ -457,3 +456,17 @@ condensed without changing the portrait or research publications.
 Astra's generated-page/data/CSS review approved the exact dates, roles, advisors
 and layout without changes. Root verified 5 records, exclusions, chronology and
 7 unchanged pages. Publishing through the existing main-branch workflow.
+
+About timeline publication completed:
+
+- Source `93f04e1fab58`, published build `0d40ab25e80d`.
+- Source workflow https://github.com/Takui9/Takui9.github.io/actions/runs/42183011930
+  and Pages https://github.com/Takui9/Takui9.github.io/actions/runs/42183109267
+  succeeded.
+- Eight public pages and the timeline stylesheet match the approved build;
+  31 local resources return 200. Private exclusion checks passed on public HTML.
+- Astra independently reviewed the fresh public About content and CSS and
+  approved the merged version with no further changes. Browser visual testing
+  remains unavailable.
+- Temporary private CV render/extraction files were removed after review; the
+  original user PDF remains untouched outside the repository.
