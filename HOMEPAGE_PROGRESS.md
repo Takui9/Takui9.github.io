@@ -22,11 +22,13 @@ GitHub Pages deployment workflow.
 
 ## Current work
 
-Latest result: only the Projects tab's Related collaboration was reformatted
-as a compact ACP project entry and published. Astra approved its actual rendered
-text. The public Projects HTML/CSS matches the build; Home, Papers, and CPG-RL
-remain byte-identical to their prior reviewed output. Pages run `42168030909`
-succeeded. Local dashboard: `_homepage-progress.html` (refreshes every 15 seconds).
+Latest result: Paper explainers are live at https://takui9.github.io/explainers/.
+The two existing films are embedded with original credit and true 1:40/1:50
+durations. The new 1:30 IROS explainer includes narration, English captions,
+transcript, eight interactive scenes, glossary and paper figures. Astra approved
+the final content, encoded frames and interaction logic. All eight public pages,
+28 local resources and the full new video passed live checks. Source build and
+Pages deployment both succeeded. Local dashboard: `_homepage-progress.html`.
 
 ## Main files
 
@@ -346,3 +348,20 @@ local resource graph/anchors, 90-second full video decode, captions, fast-start
 metadata, external video range support, and original-media preservation passed.
 The browser host is unavailable; this is not a browser or screen-reader test.
 Publishing the reviewed explainer feature now.
+
+
+Paper explainer publication completed:
+
+- Source `98b6b761ce4f`; published build `c9fc3c1c23e0`.
+- Source build succeeded: https://github.com/Takui9/Takui9.github.io/actions/runs/42171846133.
+- Pages deployment succeeded: https://github.com/Takui9/Takui9.github.io/actions/runs/42171929138.
+- All eight live pages match the reviewed production HTML byte for byte.
+- All 28 linked local resources return 200; deployed explainer CSS/JS/VTT match
+  the build. The complete 13,849,299-byte CPG film matches its approved SHA-256,
+  and its range request returns correct 206 data.
+- The automatic source workflow published first; the parallel isolated direct
+  push safely declined the changed remote ref, and no retry/force push was made.
+  The isolated worktree was removed.
+- Astra approved text, encoded frames, diagram logic and interaction fixes.
+  Browser playback/screen-reader testing remains unavailable via CUA.
+- GitHub personal link is removed. Twitter awaits the user's account address.

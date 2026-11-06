@@ -352,3 +352,11 @@ unavailable; no browser playback or screen-reader testing is claimed.
 The homepage GitHub profile link was removed as requested. Twitter is rendered
 only when `twitter_username` is configured; the user's account is still pending
 and no handle has been inferred.
+
+The explainer release is live at https://takui9.github.io/explainers/. Source
+`98b6b761ce4f` and published build `c9fc3c1c23e0` passed both the
+[source workflow](https://github.com/Takui9/Takui9.github.io/actions/runs/42171846133)
+and [Pages deployment](https://github.com/Takui9/Takui9.github.io/actions/runs/42171929138).
+All eight public HTML pages match the reviewed build byte for byte. The 28 local
+resource links, explainer CSS/JS/VTT, complete new film hash and 206 streaming
+range data passed public checks.
