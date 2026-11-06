@@ -398,3 +398,5 @@ Astra reviewed the generated Home HTML/CSS and playback source and approved it
 without changes. Other seven HTML pages remain byte-identical; the original
 video assets and 47-second hero teaser are unchanged. Browser visual testing
 remains unavailable. Preparing the main-branch release.
+
+Release check observed a ten-minute shared stylesheet cache. The new home-only component CSS was separated into a newly loaded file to avoid stale styling for returning visitors; the reviewed layout and copy are unchanged.

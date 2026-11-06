@@ -377,3 +377,5 @@ experiment-video behavior pauses it offscreen. It does not change the original
 hero or About section. Two plain links reach the interactive CPG page and all
 three explainers. Astra approved the generated HTML/CSS and playback behavior
 from source; no browser visual testing is claimed.
+
+The homepage feature loads its component CSS separately (`assets/css/home-explainer.css`), so the new layout does not depend on a previously cached shared stylesheet.
