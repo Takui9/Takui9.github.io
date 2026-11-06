@@ -286,3 +286,69 @@ All 19 local resource links, the deployed CSS, and teaser streaming/range data
 passed public checks. The validated local production output was pushed directly
 to the existing Pages branch because the separate source-build workflow was
 spending unusually long installing image tools.
+
+
+## Paper explainers (6 November 2026)
+
+The new `/explainers/` directory links three local pages. Each first-author paper
+now has a duration-labeled explainer link on Home, Projects, and Papers.
+
+- Humanoid: `/explainers/humanoid-motion-generation/`, 1:40.
+- Animal priors: `/explainers/motion-priors-reimagined/`, 1:50.
+- CPG: `/explainers/online-cpg-optimization/`, exactly 1:30.
+
+The first two embed Takahiro Miki's original narrated MP4s and retain explicit
+credit and links to the original interactive walkthrough/transcript. Their full
+authored pages/engines are not mirrored. Local method summaries and result-scope
+notes are checked against the source papers. In particular, the humanoid's quoted
+80 cm result refers to 0° obstacle yaw in simulation; the animal success rates
+refer to the noisy-observation simulation student, rather than hardware rates.
+
+Astra authored and verified the eight-scene CPG script, source-linked details,
+terms, and visual scope. Root implemented a narrated film, captions/transcript,
+and a replayable Canvas explanation. Educational interactions include a real
+one-dimensional Gaussian-process/UCB example, load-versus-incline context, and
+rescoring stored trial measurements when the velocity target changes. These are
+explicitly labeled schematics, not a reproduction of the eight-parameter robot
+optimizer or a robot simulator. Hardware footage/figures remain distinct.
+
+The CPG MP4 uses 1280×720, 30fps, H.264, 48 kHz AAC, fast-start metadata and
+an exact 90-second timeline. Original hardware footage appears in its hardware
+scene. Narration uses Kokoro's `af_sarah` synthetic voice. This feature is separate
+from the approved homepage teaser, whose bytes remain unchanged.
+
+Data and implementation:
+
+- `_data/explainers.yml`: directory metadata, original video URLs, scoped summaries.
+- `_data/cpg_explainer.json`: Astra-reviewed eight-scene narrative and evidence.
+- `_layouts/paper-explainer.html`, `_includes/cpg-explainer.html`: accessible pages.
+- `assets/js/cpg-explainer.js`: timeline, diagrams, UCB and educational controls.
+- `assets/video/cpg-explainer.mp4` / `.vtt`: final film and captions.
+
+Offline reproduction uses development-only tools installed outside the repo;
+production remains a static Jekyll build. The native Canvas renderer reuses the
+interactive drawing code without launching a browser.
+
+```sh
+python scripts/build_cpg_narration.py --models /path/to/kokoro-models
+node scripts/render_cpg_explainer.cjs \
+  --canvas-module /path/to/node_modules/@napi-rs/canvas \
+  --font /path/to/Geist.ttf --ffmpeg /path/to/ffmpeg
+```
+
+Narration prerequisites: Python 3.12, kokoro-onnx 0.6.1, numpy and soundfile;
+Kokoro v1.0 int8 model and voices from the official kokoro-onnx model release.
+Rendering prerequisites: Node 22, @napi-rs/canvas, Geist font and FFmpeg.
+Models, raw audio and render intermediates remain outside the published repo.
+
+Astra's final review covered all new production-page text, encoded-video frames,
+and the interaction source. Required corrections to UCB selection, pause-state
+continuity, ARIA announcements and visible scope labels were implemented and
+regression-checked. All eight pages' local resources/anchors, source-video
+preservation, external-video range support, captions, full decode and fast-start
+metadata passed. Browser access was attempted through CUA but its host remains
+unavailable; no browser playback or screen-reader testing is claimed.
+
+The homepage GitHub profile link was removed as requested. Twitter is rendered
+only when `twitter_username` is configured; the user's account is still pending
+and no handle has been inferred.

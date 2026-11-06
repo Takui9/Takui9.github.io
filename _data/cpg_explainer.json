@@ -1,0 +1,163 @@
+{
+  "slug": "online-cpg-optimization",
+  "paper_title": "Online Optimization of Central Pattern Generators for Quadruped Locomotion",
+  "display_title": "Adapting a rhythmic controller online",
+  "intro": "How Bayesian optimization adjusts a quadruped’s rhythmic controller as commands, slope, and payload change.",
+  "paper_url": "https://arxiv.org/abs/2410.16417",
+  "full_text_url": "https://arxiv.org/html/2410.16417v1",
+  "authors": [
+    "Zewei Zhang",
+    "Guillaume Bellegarda",
+    "Milad Shafiee",
+    "Auke Ijspeert"
+  ],
+  "target_duration_seconds": 90,
+  "glossary": [
+    {
+      "term": "Central pattern generator (CPG)",
+      "definition": "A rhythmic controller represented here by coupled oscillators, one for each leg."
+    },
+    {
+      "term": "Bayesian optimization",
+      "definition": "A trial-based search that uses a probabilistic model to choose the next parameter setting to evaluate."
+    },
+    {
+      "term": "Context",
+      "definition": "Measured information related to the current operating condition; here, averaged foot forces and body pitch."
+    },
+    {
+      "term": "Cost of transport",
+      "definition": "An energy-use measure normalized by weight and distance traveled."
+    },
+    {
+      "term": "Force feedback",
+      "definition": "Foot-contact forces used to adjust the timing of the oscillator-driven movement."
+    },
+    {
+      "term": "Virtual model control (VMC)",
+      "definition": "A posture controller that adds corrective torques based on the robot’s attitude."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "conditions",
+      "start": 0,
+      "duration": 8,
+      "title": "When conditions change",
+      "screen_text": "Same robot. Different conditions.",
+      "narration": "Walking is not one fixed setting. A heavier load, a slippery surface, or a slope changes what works.",
+      "detail": "The paper studies online adjustment of a CPG-based locomotion controller when velocity commands or physical conditions change. It evaluates friction, slope, and added payload in separate experiments. This is a controller-adaptation problem, rather than a demonstration that one fixed gait handles every environment.",
+      "evidence": [
+        "Abstract",
+        "Section III-D: Experimental Setup",
+        "Section IV-D: Hardware Experiments",
+        "Figure 1"
+      ],
+      "visual_scope": "Conceptual diagram; the condition switches are not a measured trial."
+    },
+    {
+      "id": "prior",
+      "start": 8,
+      "duration": 11,
+      "title": "A compact locomotion prior",
+      "screen_text": "Four coupled oscillators · Eight tuned parameters",
+      "narration": "This controller starts with central pattern generators: coupled oscillators that organize a rhythmic gait. Eight adjustable parameters shape the movement and its force feedback.",
+      "detail": "One oscillator drives each leg. Coupled phases organize a trot, while oscillator states are mapped to foot trajectories and then to joint commands. The optimizer tunes eight variables: ground clearance, ground penetration, swing and stance frequencies, oscillator amplitude, front and hind foot offsets, and force-feedback strength. This is a designed rhythmic structure, not a policy learned from animal motion capture.",
+      "evidence": [
+        "Section II-A1, Equations 1–5",
+        "Section III-A: eight-dimensional parameter vector"
+      ],
+      "visual_scope": "Schematic oscillator animation, not a robot simulation."
+    },
+    {
+      "id": "bayesian-search",
+      "start": 19,
+      "duration": 14,
+      "title": "Choose the next trial",
+      "screen_text": "Predict → Test → Update",
+      "narration": "Bayesian optimization chooses what to try next. A probabilistic model predicts how parameter settings affect a score for speed tracking and energy use. Each trial updates that model, balancing predicted performance against uncertainty.",
+      "detail": "A Gaussian-process model summarizes the parameter settings and scores observed so far. An upper-confidence-bound acquisition function chooses the next setting using the predicted score and uncertainty. The objective rewards velocity tracking and penalizes cost of transport. Each trial includes a 1.5-second parameter transition and a 3-second evaluation interval; parameters are not reoptimized at every control step. Exploration can produce lower-scoring trials, so improvement is not necessarily monotonic.",
+      "evidence": [
+        "Section II-C: Bayesian Optimization",
+        "Section III-A1, Equation 9",
+        "Section III-B: Algorithm",
+        "Section III-C: Implementation Details"
+      ],
+      "visual_scope": "Illustrative Bayesian-optimization diagram; no experimental values."
+    },
+    {
+      "id": "context",
+      "start": 33,
+      "duration": 12,
+      "title": "Condition the search on context",
+      "screen_text": "Foot forces → load-related context\nBody pitch → slope-related context",
+      "narration": "The optimizer also uses context. Foot forces provide a load-related estimate; body pitch provides a slope-related estimate. This helps it learn different settings for different conditions.",
+      "detail": "Contextual Bayesian optimization conditions the score model on two measured quantities: averaged normal foot forces and averaged body pitch. These are proxies related to payload and slope, not exact measurements of kilograms or terrain angle. The optimizer can use experience from nearby contexts when proposing parameters. Friction is tested experimentally but is not an additional context input in this implementation.",
+      "evidence": [
+        "Section II-D, Equations 7–8",
+        "Section III-A3, Equation 11",
+        "Section IV-C"
+      ],
+      "visual_scope": "Sensor-to-context schematic, not a calibrated estimator display."
+    },
+    {
+      "id": "reuse",
+      "start": 45,
+      "duration": 11,
+      "title": "Reuse trials when speed changes",
+      "screen_text": "Reuse measurements. Recompute the score.",
+      "narration": "When the target speed changes, previous trials are scored again for the new target. Their measurements are reused instead of restarting the search.",
+      "detail": "The objective explicitly contains the desired velocity. When that command changes, stored velocity and energy measurements can be evaluated against the new target, updating the objective values for previous parameter trials. This is reuse of measured trials, not copying a policy trained for another task. The hardware velocity-command experiment includes 0.6 → 0.3 → 0.5 → 0.6 m/s.",
+      "evidence": [
+        "Section III-A2: Data Reuse",
+        "Section IV-B",
+        "Section IV-D, Figure 4c"
+      ],
+      "visual_scope": "The commands are reported hardware settings; the illustrated records and scores are schematic."
+    },
+    {
+      "id": "feedback",
+      "start": 56,
+      "duration": 11,
+      "title": "Feedback supports the rhythm",
+      "screen_text": "Foot forces adjust timing\nVirtual model control corrects posture",
+      "narration": "Two feedback mechanisms help execution: contact forces adjust oscillator timing, while virtual model control corrects body posture. Ablations support combining them.",
+      "detail": "Force feedback enters the oscillator phase equations, slowing phase progression when a leg is loaded. Virtual model control adds attitude-correcting torques. These fast feedback mechanisms work alongside the slower parameter optimizer. The controller ablation compares open-loop CPG, CPG with VMC, CPG with force feedback, and their combination; the results support force feedback and the combined controller, without establishing a universal performance or safety guarantee.",
+      "evidence": [
+        "Section II-A2, Equation 6",
+        "Section II-B: Virtual Model Control",
+        "Section IV-E, Table II and Figure 6"
+      ],
+      "visual_scope": "Mechanism diagrams. Consult Table II for the reported controller comparison."
+    },
+    {
+      "id": "hardware",
+      "start": 67,
+      "duration": 15,
+      "title": "What the hardware experiments showed",
+      "screen_text": "Unitree Go1 · Treadmill experiments\n<3 min initial learning · 10° incline · +15 kg payload",
+      "narration": "On a treadmill, the Go1 learned flat-ground speed tracking in under three minutes. Separate hardware tests demonstrated adaptation to a ten-degree slope and added payloads up to fifteen kilograms.",
+      "detail": "In the reported hardware slope experiment, the robot first learned to track 0.4 m/s on flat ground in fewer than 40 trials, reported as under three minutes. After the slope changed to 10°, it regained the target speed after about 20 further trials, reported as around two minutes. Separate hardware experiments added 5, 10, and 15 kg payloads. The slope and payload tests were conducted separately. The reported learning times describe these experiments, not a general guarantee of adaptation speed.",
+      "evidence": [
+        "Section III-D: treadmill setup",
+        "Section IV-D: Hardware Experiments",
+        "Figures 1, 4 and 5"
+      ],
+      "visual_scope": "Reported hardware results. Initial learning and subsequent adaptation are distinct phases."
+    },
+    {
+      "id": "limits",
+      "start": 82,
+      "duration": 8,
+      "title": "Adaptation within a defined scope",
+      "screen_text": "Online parameter adaptation\nNo explicit safety guarantee during search",
+      "narration": "Parameters adapt online. The search has no explicit safety guarantee; more rugged terrain remains future work.",
+      "detail": "The result is a compact, biologically inspired controller whose parameters can be optimized through physical interaction. The paper studies a trot structure and specific command, friction, slope, and payload changes. It does not demonstrate arbitrary rough-terrain navigation or a general repertoire of learned gaits. The authors explicitly identify safety guarantees during parameter search and more rugged terrain as limitations or future work.",
+      "evidence": [
+        "Section V: Conclusion",
+        "Section II-A1: trot phase coupling"
+      ],
+      "visual_scope": "Summary of scope and the authors’ stated limitations."
+    }
+  ]
+}

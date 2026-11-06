@@ -28,6 +28,7 @@ description: Zewei Zhang's research on adapting motion priors through CPG parame
       <dl class="project-facts"><dt>Prior</dt><dd>{{ study.prior }}</dd><dt>Adaptation</dt><dd>{{ study.adaptation }}</dd><dt>Robot</dt><dd>{{ study.robot }}</dd></dl>
       <div class="related-paper"><span>Related paper</span><a href="{{ '/papers/' | relative_url }}#{{ paper.id }}">{{ paper.title }}</a></div>
       {% if paper.project_url %}<a class="external-project" href="{{ paper.project_url }}">Full project page ↗</a>{% endif %}
+      {% if paper.explainer_url %}<a class="external-project project-explainer" href="{{ paper.explainer_url | relative_url }}">▶ Explainer · {{ paper.explainer_duration }}</a>{% endif %}
     </div>
   </article>
 {% endfor %}

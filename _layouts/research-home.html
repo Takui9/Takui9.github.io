@@ -13,7 +13,7 @@
       <h1 id="hero-title">Zewei Zhang</h1>
       <p class="hero-lede">I work on robot learning for legged locomotion and whole-body control.</p>
       <p class="hero-background">I earned my MSc in Mechanical Engineering at EPFL, with research experience at EPFL’s BioRob and ETH Zurich’s Robotic Systems Lab.</p>
-      <div class="personal-links"><a href="mailto:{{ site.email }}">Email</a><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a><a href="https://github.com/Takui9">GitHub</a></div>
+      <div class="personal-links"><a href="mailto:{{ site.email }}">Email</a><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a>{% if site.twitter_username %}<a href="https://x.com/{{ site.twitter_username | escape }}">Twitter</a>{% endif %}</div>
     </div>
     <div class="reel-controls"><a href="{{ '/assets/video/research-reel-full.mp4' | relative_url }}">Extended highlights ↗</a><button id="reel-toggle" type="button" aria-label="Play research highlights">Play <span aria-hidden="true">▶</span></button></div>
     <p class="reel-caption">ANYmal / G1 <span aria-hidden="true">·</span> {{ site.data.reel.duration | round }} seconds</p>
@@ -30,7 +30,7 @@
 
   <section class="publications section wrap" id="research" aria-labelledby="research-title">
     <h2 id="research-title">Selected publications</h2>
-    <p class="research-note">My research explores how motion priors can be adapted to changing commands, terrain, and physical conditions through parameter optimization, residual policies, and motion generation. <a href="{{ '/projects/' | relative_url }}">Research projects ↗</a></p>
+    <p class="research-note">My research explores how motion priors can be adapted to changing commands, terrain, and physical conditions through parameter optimization, residual policies, and motion generation. <a href="{{ '/projects/' | relative_url }}">Research projects ↗</a> <a href="{{ '/explainers/' | relative_url }}">Paper explainers ↗</a></p>
 
     {% assign selected_papers = site.data.research.papers | where: 'first_author', true %}
     {% for paper in selected_papers %}

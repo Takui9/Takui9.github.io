@@ -23,6 +23,8 @@ papers:
     project_url: https://wholebodylocomotion.github.io/
     video_url: https://youtu.be/OY61TiDoj4I
     citation: /assets/citations/wholebody.bib
+    explainer_url: /explainers/humanoid-motion-generation/
+    explainer_duration: "1:40"
     preview: /assets/video/human-adaptation.mp4
     poster: /assets/img/human-poster.jpg
     media_alt: Unitree G1 climbing up and down a box
@@ -38,6 +40,8 @@ papers:
     paper_url: https://arxiv.org/abs/2505.16084
     project_url: https://anymalprior.github.io/
     citation: /assets/citations/animal-priors.bib
+    explainer_url: /explainers/motion-priors-reimagined/
+    explainer_duration: "1:50"
     preview: /assets/video/animal-adaptation.mp4
     poster: /assets/img/animal-poster.jpg
     media_alt: ANYmal-D walking through grass.
@@ -54,6 +58,8 @@ papers:
     paper_url: https://arxiv.org/abs/2410.16417
     video_url: https://youtu.be/4qq5leCI2AI
     citation: /assets/citations/cpg.bib
+    explainer_url: /explainers/online-cpg-optimization/
+    explainer_duration: "1:30"
     preview: /assets/video/cpg-adaptation.mp4
     poster: /assets/img/cpg-poster.jpg
     media_alt: Unitree Go1 locomotion experiments with reduced friction, an added payload, and an incline.

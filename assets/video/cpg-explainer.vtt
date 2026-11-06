@@ -1,0 +1,40 @@
+WEBVTT
+
+00:00:00.200 --> 00:00:06.600
+Walking is not one fixed setting. A heavier load, a slippery surface, or
+a slope changes what works.
+
+00:00:08.200 --> 00:00:18.376
+This controller starts with central pattern generators: coupled
+oscillators that organize a rhythmic gait. Eight adjustable parameters
+shape the movement and its force feedback.
+
+00:00:19.200 --> 00:00:32.320
+Bayesian optimization chooses what to try next. A probabilistic model
+predicts how parameter settings affect a score for speed tracking and
+energy use. Each trial updates that model, balancing predicted
+performance against uncertainty.
+
+00:00:33.200 --> 00:00:44.357
+The optimizer also uses context. Foot forces provide a load-related
+estimate; body pitch provides a slope-related estimate. This helps it
+learn different settings for different conditions.
+
+00:00:45.200 --> 00:00:53.563
+When the target speed changes, previous trials are scored again for the
+new target. Their measurements are reused instead of restarting the
+search.
+
+00:00:56.200 --> 00:01:06.461
+Two feedback mechanisms help execution: contact forces adjust oscillator
+timing, while virtual model control corrects body posture. Ablations
+support combining them.
+
+00:01:07.200 --> 00:01:19.424
+On a treadmill, the Go1 learned flat-ground speed tracking in under
+three minutes. Separate hardware tests demonstrated adaptation to a ten-
+degree slope and added payloads up to fifteen kilograms.
+
+00:01:22.200 --> 00:01:29.347
+Parameters adapt online. The search has no explicit safety guarantee;
+more rugged terrain remains future work.

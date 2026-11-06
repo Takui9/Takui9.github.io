@@ -1,0 +1,43 @@
+- id: human
+  paper_id: wholebody
+  slug: humanoid-motion-generation
+  duration: "1:40"
+  duration_seconds: 100
+  video: https://takahiromiki.com/explainers/humanoid-motion-generation/media/summary.mp4
+  poster: https://takahiromiki.com/explainers/humanoid-motion-generation/media/poster.jpg
+  original: https://takahiromiki.com/explainers/humanoid-motion-generation/
+  lede: Human motion provides the skills; terrain-aware generation and tracking adapt their execution to the robot’s surroundings.
+  scope: The quoted 23.0% and 96.2% success rates refer to the 80 cm box with 0° obstacle yaw in simulation, using 500 instances per setting. Hardware footage demonstrates deployment on the Unitree G1; the paper reports those demonstrations qualitatively.
+  points:
+    - heading: Generate the reference
+      text: A diffusion model uses terrain, a target direction, and recent robot states to generate short-horizon motion references from retargeted human demonstrations.
+    - heading: Execute and adapt
+      text: An RL-trained tracker follows the references using proprioception and terrain observations. It is fine-tuned in closed loop with the generator frozen, improving execution when generated references are imperfect.
+    - heading: Read the evidence
+      text: The fixed-reference comparison is a simulation result in Table III of the revised paper. Hardware experiments demonstrate box climbing, hurdle traversal, stairs, and mixed terrain with perception and computation onboard.
+- id: animal
+  paper_id: animal-priors
+  slug: motion-priors-reimagined
+  duration: "1:50"
+  duration_seconds: 110
+  video: https://takahiromiki.com/explainers/motion-priors-reimagined/media/summary.mp4
+  poster: https://takahiromiki.com/explainers/motion-priors-reimagined/media/poster.jpg
+  original: https://takahiromiki.com/explainers/motion-priors-reimagined/
+  lede: Flat-ground dog motion becomes a reusable skill layer, with learned joint corrections for rough terrain and local navigation.
+  scope: The quoted 75–95 successes in 100 trials evaluate the student policy with noisy observations in simulation. Hardware demonstrations show deployment on ANYmal-D. The paper also reports that the high-level policy can favor one gait rather than reliably switch between all learned gaits.
+  points:
+    - heading: Learn a movement prior
+      text: A low-level policy learns to imitate dog motion on flat ground. It is then frozen, preserving a reusable set of movement skills.
+    - heading: Adapt through residuals
+      text: A goal-conditioned high-level policy supplies latent motion commands and joint-level residual corrections. Penalizing large residuals balances terrain adaptation with fidelity to the learned movement patterns.
+    - heading: Transfer to the robot
+      text: A student learns from the teacher using noisy simulated observations, before deployment on the real robot. Hardware experiments demonstrate stair traversal and local navigation among obstacles.
+- id: cpg
+  paper_id: cpg
+  slug: online-cpg-optimization
+  duration: "1:30"
+  duration_seconds: 90
+  video: /assets/video/cpg-explainer.mp4
+  poster: /assets/img/explainers/cpg-poster.jpg
+  captions: /assets/video/cpg-explainer.vtt
+  lede: Keep the oscillator-based controller, and learn parameter settings that fit the command and operating conditions.

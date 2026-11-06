@@ -45,6 +45,7 @@ h1 { font-size: clamp(72px, 8.4vw, 112px); font-weight: 600; letter-spacing: -.0
 .about p + p { margin-top: 15px; }
 .portrait { width: 160px; height: 190px; object-fit: cover; border-radius: 3px; }
 .research-note { max-width: 83ch; color: var(--muted); margin-top: -4px; margin-bottom: 7px; }
+.research-note a + a { margin-left: 15px; }
 .publication { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 30px; padding-block: 30px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .publication > video { width: 240px; aspect-ratio: 16/9; object-fit: contain; background: #f1f3f4; margin-top: 5px; border-radius: 3px; }
 .publication > .cpg-video { aspect-ratio: 4/3; }
@@ -146,6 +147,7 @@ h3 a { color: var(--ink); }
 .related-paper { margin-top: 23px; font-size: 13px; line-height: 1.65; }
 .related-paper > span { display: block; color: var(--muted); font-size: 11px; margin-bottom: 4px; }
 .external-project { display: inline-block; font-size: 12px; margin-top: 12px; }
+.external-project + .project-explainer { margin-left: 20px; }
 .related-collaboration, .project-earlier { margin-top: 46px; }
 .related-collaboration h2, .project-earlier h2 { font-size: 24px; margin-bottom: 16px; }
 .related-collaboration > p { font-size: 15px; max-width: 85ch; }

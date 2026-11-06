@@ -315,3 +315,34 @@ Publication completed: source `a68a64bf9798`, public build `c0ae7577a4fc`;
 Pages run https://github.com/Takui9/Takui9.github.io/actions/runs/42168030909
 succeeded. Fresh public Projects HTML and CSS match the approved output. Home,
 Papers, and CPG-RL remain byte-identical to their previous reviewed output.
+
+
+## Paper explainers — implementation and media review in progress
+
+User requested the reference site's short paper-explainer feature, reusing the
+two existing explainers and asking Astra to create an IROS CPG explainer.
+
+- New local directory and three detail pages use the site's typography and
+  navigation. Home/Papers/Projects receive per-paper explainer links.
+- The existing humanoid and quadruped films are embedded from Takahiro Miki's
+  original pages, with attribution, links to the full interactive walkthroughs,
+  and new source-checked scope notes. Their actual durations remain 1:40/1:50.
+- Astra authored and checked eight CPG scenes totaling 90 seconds, including
+  narration, explanatory details, glossary, visual scope and paper references.
+- Root implemented the canvas diagrams, three educational interactions, a
+  synthetic narrated film, captions and transcript. The same diagram code is
+  rendered offline with native Canvas for video; no browser screenshots or
+  copied reference engine are used.
+- Narration and control checks passed. Full encoding and Astra's diagram/page
+  review are in progress. The approved homepage teaser is preserved.
+- Homepage GitHub removal is prepared. Twitter remains unconfigured because the
+  account address has not been supplied; no account is guessed.
+
+Final explainer review passed after two wording fixes. Astra approved the actual
+new pages, encoded frames and interaction code. Native-control regressions
+verified scene selection, GP/UCB trials, context, target reuse, pause-state
+continuity and bounded ARIA updates. Production generation, all eight pages'
+local resource graph/anchors, 90-second full video decode, captions, fast-start
+metadata, external video range support, and original-media preservation passed.
+The browser host is unavailable; this is not a browser or screen-reader test.
+Publishing the reviewed explainer feature now.
