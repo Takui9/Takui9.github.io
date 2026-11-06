@@ -296,3 +296,18 @@ Final publication:
   matches the build, and the teaser range request returned correct 206 data.
 - Astra's final generated-text review found no further language or factual
   corrections. All original videos remain unchanged.
+
+
+## Projects collaboration entry — reviewed, publishing
+
+User requested only the Projects tab's Related collaboration section use a
+compact project-entry format, and asked Astra to review its text. The new entry
+has year/arXiv/status/Coauthor metadata, the formal title, full authors, one
+previously verified method sentence, and Paper/Project links. It uses the main
+project typography and separators, without a fourth storyline chapter.
+
+Astra reviewed the actual rendered entry and approved the text, author order,
+coauthor label and under-review status. Production generation passed; Home,
+Papers and CPG-RL HTML are byte-identical to the prior reviewed build. CSS changes
+are limited to the new Projects entry's class. Publishing the two changed public
+files only: Projects HTML and its stylesheet.

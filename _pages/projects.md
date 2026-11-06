@@ -33,7 +33,14 @@ description: Zewei Zhang's research on adapting motion priors through CPG parame
 {% endfor %}
 <section class="related-collaboration" aria-labelledby="related-collaboration-title">
   <h2 id="related-collaboration-title">Related collaboration</h2>
-  <p>I also coauthored <a href="{{ '/papers/' | relative_url }}#acp">Humanoid Mobility via Attention-based Contacts</a>, which uses predicted body–environment contacts to guide whole-body humanoid motion.</p>
+  {% assign collaboration = site.data.research.papers | where: 'id', 'acp' | first %}
+  <article class="project-collaboration" id="acp">
+    <p class="project-meta">{{ collaboration.year }} · {{ collaboration.venue }} · {{ collaboration.status }} · <span class="author-role">Coauthor</span></p>
+    <h3><a href="{{ collaboration.paper_url }}">{{ collaboration.title }}</a></h3>
+    <p class="authors">{% for author in collaboration.authors %}{% if author == 'Zewei Zhang' %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <p class="summary">{{ collaboration.summary }}</p>
+    <div class="paper-links"><a href="{{ collaboration.paper_url }}">Paper</a><a href="{{ collaboration.project_url }}">Project</a></div>
+  </article>
 </section>
 <section class="project-earlier" aria-labelledby="earlier-projects-title">
   <h2 id="earlier-projects-title">Earlier projects</h2>

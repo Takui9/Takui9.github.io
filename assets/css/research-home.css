@@ -149,6 +149,9 @@ h3 a { color: var(--ink); }
 .related-collaboration, .project-earlier { margin-top: 46px; }
 .related-collaboration h2, .project-earlier h2 { font-size: 24px; margin-bottom: 16px; }
 .related-collaboration > p { font-size: 15px; max-width: 85ch; }
+.project-collaboration { padding-block: 24px 28px; border-block: 1px solid var(--line); }
+.project-collaboration h3 { font-size: clamp(25px, 3vw, 28px); line-height: 1.2; letter-spacing: -.035em; }
+.project-collaboration .summary { max-width: 85ch; font-size: 15px; }
 .project-earlier ul { margin: 0; padding-left: 19px; font-size: 14px; }
 .project-earlier li + li { margin-top: 8px; }
 .bibliography-year { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 30px; margin-top: 33px; scroll-margin-top: 25px; }
