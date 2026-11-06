@@ -278,3 +278,11 @@ resource/anchor checks, author/role metadata preservation, production exclusions
 video byte hashes, and cue-content comparisons passed. Production JSON whitespace
 is minified. Astra's final check covered generated text, not new browser visual
 inspection or continuous video playback.
+
+Publication of the refined copy succeeded: reviewed source `9ca8647be338`,
+published build `8d9ba4d817d9`, [Pages run 42161954567](https://github.com/Takui9/Takui9.github.io/actions/runs/42161954567).
+The public HTML of all four pages matches the reviewed production output exactly.
+All 19 local resource links, the deployed CSS, and teaser streaming/range data
+passed public checks. The validated local production output was pushed directly
+to the existing Pages branch because the separate source-build workflow was
+spending unusually long installing image tools.

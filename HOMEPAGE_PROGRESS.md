@@ -22,13 +22,12 @@ GitHub Pages deployment workflow.
 
 ## Current work
 
-Latest result: the complete text/factual audit is approved by Astra, including
-its final read of all four generated production pages. Root implemented the
-refinements and all production checks passed. Automatic publication of this
-revision is in progress. The site remains at https://takui9.github.io/.
+Latest result: the full text/factual revision is live at https://takui9.github.io/.
+Astra approved all four generated pages. Their public HTML is byte-identical to
+the reviewed production build; the 19 linked local resources, deployed stylesheet,
+and teaser streaming checks passed. Pages deployment `42161954567` succeeded.
 The local visual dashboard is `_homepage-progress.html`; it refreshes every
-15 seconds. Actual browser rendering remains unverified because browser/Computer
-Use access is unavailable.
+15 seconds. This revision was reviewed as text, not as a new browser visual test.
 
 ## Main files
 
@@ -253,7 +252,7 @@ with native image generation/minification passed.
   browser/Computer Use restrictions.
 
 
-## Full copy and factual audit — reviewed, publishing (6 November 2026)
+## Full copy and factual audit — published (6 November 2026)
 
 User requested Astra review and refine all published text, verify claims against
 the papers, then automatically publish the revised version. Scope: Home,
@@ -278,3 +277,22 @@ reads “Extended highlights.” Full evidence map is in `HOMEPAGE.md`.
 Production generation, all four pages' HTML/navigation/resources/anchors,
 metadata/author/role preservation, exclusions, and unchanged approved video
 checks passed. The revision is ready and being pushed for automatic deployment.
+
+Publishing source revision: `9ca8647be338`. Workflow:
+https://github.com/Takui9/Takui9.github.io/actions/runs/42161115147.
+
+Final publication:
+
+- Reviewed source: `9ca8647be338`; published build: `8d9ba4d817d9`.
+- GitHub Pages deployment succeeded:
+  https://github.com/Takui9/Takui9.github.io/actions/runs/42161954567.
+- The source-build workflow remained in its image-tool installation step, so
+  root published the already validated production output directly to the existing
+  `gh-pages` branch using a normal fast-forward push from an isolated worktree.
+  No source-workspace checkout or force push was used. The original source build
+  was still running at handoff; this is distinct from the successful Pages deploy.
+- Fresh public Home, Projects, Papers and CPG-RL HTML matches the approved build
+  byte for byte. All 19 linked local resources returned 200, the stylesheet
+  matches the build, and the teaser range request returned correct 206 data.
+- Astra's final generated-text review found no further language or factual
+  corrections. All original videos remain unchanged.
