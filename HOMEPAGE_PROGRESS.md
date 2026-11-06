@@ -365,3 +365,20 @@ Paper explainer publication completed:
 - Astra approved text, encoded frames, diagram logic and interaction fixes.
   Browser playback/screen-reader testing remains unavailable via CUA.
 - GitHub personal link is removed. Twitter awaits the user's account address.
+
+
+## Astra post-merge review — approved
+
+At the user's request, root confirmed the feature is integrated in main, then
+asked Astra to review the merged public version once more. Fresh snapshots of
+all eight live pages and the explainer JS/CSS/VTT are saved under
+`/tmp/zewei-postmerge-review/`; all 11 payloads match the approved production
+build byte for byte. No additional source changes have been made.
+
+Astra independently read the fresh public directory, three explainer pages,
+Home/Papers/Projects entry links and production resources. All 11 public payloads
+matched the approved build with zero mismatches; VTT narration matches all eight
+reviewed scenes. Attribution, experiment scope and final copy corrections are
+correct. Post-merge approved, with no further source fixes needed. Review remains
+limited to public content/resources and encoded frames, not browser playback or
+screen-reader testing.
