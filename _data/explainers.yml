@@ -1,6 +1,9 @@
 - id: human
   paper_id: wholebody
   slug: humanoid-motion-generation
+  home_label: Humanoid
+  home_title: Whole-body humanoid locomotion
+  home_summary: How terrain-aware motion generation and tracking adapt human motion priors for humanoid locomotion.
   duration: "1:40"
   duration_seconds: 100
   video: https://takahiromiki.com/explainers/humanoid-motion-generation/media/summary.mp4
@@ -18,6 +21,9 @@
 - id: animal
   paper_id: animal-priors
   slug: motion-priors-reimagined
+  home_label: Quadruped
+  home_title: Adapting animal motion priors
+  home_summary: How latent motion commands and joint-level residuals adapt flat-ground dog motion priors to new terrain.
   duration: "1:50"
   duration_seconds: 110
   video: https://takahiromiki.com/explainers/motion-priors-reimagined/media/summary.mp4
@@ -35,6 +41,7 @@
 - id: cpg
   paper_id: cpg
   slug: online-cpg-optimization
+  home_label: CPG
   home_title: Online CPG optimization
   home_summary: How Bayesian optimization adapts a rhythmic locomotion controller to changing conditions.
   duration: "1:30"

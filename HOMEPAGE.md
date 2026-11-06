@@ -365,14 +365,17 @@ range data passed public checks.
 ### Homepage explainer feature
 
 Astra recommended the reference's research-first ordering: Selected publications,
-one compact Paper explainers block, then Collaborative work. Home now features
-the site's 90-second CPG explanation in a 7:5 media/copy row. At 800px and below,
+one compact Paper explainers block, then Collaborative work. Home now defaults
+to the humanoid explanation, with three small buttons for humanoid, quadruped
+and CPG. The selected explanation uses a 7:5 media/copy row. At 800px and below,
 copy precedes the full 16:9 player. The component reads its selected paper,
 duration and URLs from existing data; `home_title` and `home_summary` supply the
 short reviewed text.
 
-The native player uses `controls`, `playsinline`, `preload="none"`, English
-captions and the existing poster. It has no autoplay or loop. The existing
+The native player uses `controls`, `playsinline`, `preload="none"` and the
+selected poster. CPG supplies English captions; external explainers retain
+Takahiro Miki attribution and an original-walkthrough link. There is no autoplay
+or automatic rotation. The existing
 experiment-video behavior pauses it offscreen. It does not change the original
 hero or About section. Two plain links reach the interactive CPG page and all
 three explainers. Astra approved the generated HTML/CSS and playback behavior
@@ -385,3 +388,22 @@ The homepage feature is published from `49e61e87053d` in build `b4bc83d38c0c`;
 succeeded. All eight public pages and component assets match the approved build.
 Astra's independent post-merge HTML/CSS review approved the public implementation
 without further changes.
+
+
+### Homepage three-item selection
+
+Astra recommended the humanoid film as the initial selection and three manual
+buttons, preserving the clean homepage without an idle carousel. The switching
+script pauses the old video before changing the source and poster, removes the
+old subtitle track, loads the selected track only for CPG, and updates the title,
+venue/year, duration, description, detail link and attribution together. Selecting
+the current item leaves playback alone. The same video node retains existing
+offscreen-pause behavior.
+
+Without JavaScript, the humanoid film and its links remain usable and the
+nonfunctional selector stays hidden. Buttons use aria-pressed, and manual text
+changes use a polite region. Native DOM tests against both source and production
+JS passed all three selections, pause/no autoplay, metadata/link/credit updates,
+caption replacement, and no reload on reselection. The other seven pages remain
+byte-identical. Home CSS uses `?v=2` for returning visitors. Astra reviewed the
+production HTML and source logic without browser/media-interaction testing.

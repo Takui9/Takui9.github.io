@@ -41,24 +41,33 @@
     {% endfor %}
   </section>
 
-  {% assign featured_explainer = site.data.explainers | where: 'id', 'cpg' | first %}
+  {% assign featured_explainer = site.data.explainers | where: 'id', 'human' | first %}
   {% assign featured_paper = site.data.research.papers | where: 'id', featured_explainer.paper_id | first %}
   <section class="home-explainer section wrap" id="paper-explainers" aria-labelledby="paper-explainers-title">
     <div class="home-explainer-copy">
       <h2 id="paper-explainers-title">Paper explainers</h2>
-      <p class="project-meta">{{ featured_paper.venue }} {{ featured_paper.year }} · {{ featured_explainer.duration }}</p>
-      <h3>{{ featured_explainer.home_title }}</h3>
-      <p class="home-explainer-description">{{ featured_explainer.home_summary }}</p>
-      <div class="home-explainer-links"><a href="{{ '/explainers/' | append: featured_explainer.slug | append: '/' | relative_url }}">Explore this paper →</a><a href="{{ '/explainers/' | relative_url }}">All {{ site.data.explainers | size }} explainers →</a></div>
+      <div class="home-explainer-selector" id="home-explainer-selector" role="group" aria-label="Choose a paper explainer" hidden>{% for explainer in site.data.explainers %}<button type="button" data-home-explainer="{{ explainer.id }}" aria-pressed="{% if explainer.id == featured_explainer.id %}true{% else %}false{% endif %}">{{ explainer.home_label }} · {{ explainer.duration }}</button>{% endfor %}</div>
+      <div id="home-explainer-description" aria-live="polite" aria-atomic="true">
+        <p class="project-meta" id="home-explainer-meta">{{ featured_paper.venue }} {{ featured_paper.year }} · {{ featured_explainer.duration }}</p>
+        <h3 id="home-explainer-title">{{ featured_explainer.home_title }}</h3>
+        <p class="home-explainer-description" id="home-explainer-summary">{{ featured_explainer.home_summary }}</p>
+      </div>
+      <div class="home-explainer-links"><a id="home-explainer-detail" href="{{ '/explainers/' | append: featured_explainer.slug | append: '/' | relative_url }}">Explore this paper →</a><a href="{{ '/explainers/' | relative_url }}">All {{ site.data.explainers | size }} explainers →</a></div>
     </div>
     <figure class="home-explainer-media">
-      <video class="experiment-video" controls playsinline preload="none" poster="{{ featured_explainer.poster | relative_url }}" width="1280" height="720" aria-label="{{ featured_explainer.duration_seconds }}-second narrated explainer: {{ featured_paper.title | escape }}">
-        <source src="{{ featured_explainer.video | relative_url }}" type="video/mp4">
-        <track kind="captions" src="{{ featured_explainer.captions | relative_url }}" srclang="en" label="English" default>
+      <video id="home-explainer-video" class="experiment-video" data-explainer-id="{{ featured_explainer.id }}" controls playsinline preload="none" poster="{{ featured_explainer.poster | relative_url }}" width="1280" height="720" aria-label="{{ featured_explainer.duration_seconds }}-second narrated explainer: {{ featured_paper.title | escape }}">
+        <source id="home-explainer-source" src="{{ featured_explainer.video | relative_url }}" type="video/mp4">
+        {% if featured_explainer.captions %}<track kind="captions" src="{{ featured_explainer.captions | relative_url }}" srclang="en" label="English" default>{% endif %}
       </video>
-      <figcaption>Synthetic narration</figcaption>
+      <figcaption id="home-explainer-credit">{% if featured_explainer.original %}Explainer by Takahiro Miki · <a href="{{ featured_explainer.original }}">Original walkthrough ↗</a>{% else %}Synthetic narration{% endif %}</figcaption>
     </figure>
   </section>
+  <script id="home-explainers-data" type="application/json">[
+    {% for explainer in site.data.explainers %}{% assign explainer_paper = site.data.research.papers | where: 'id', explainer.paper_id | first %}{% assign explainer_link = '/explainers/' | append: explainer.slug | append: '/' | relative_url %}
+    {"id":{{ explainer.id | jsonify }},"title":{{ explainer.home_title | jsonify }},"summary":{{ explainer.home_summary | jsonify }},"venue":{{ explainer_paper.venue | jsonify }},"year":{{ explainer_paper.year | jsonify }},"duration":{{ explainer.duration | jsonify }},"seconds":{{ explainer.duration_seconds | jsonify }},"paperTitle":{{ explainer_paper.title | jsonify }},"detail":{{ explainer_link | jsonify }},"video":{{ explainer.video | relative_url | jsonify }},"poster":{{ explainer.poster | relative_url | jsonify }},"captions":{% if explainer.captions %}{{ explainer.captions | relative_url | jsonify }}{% else %}null{% endif %},"original":{{ explainer.original | jsonify }}}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]</script>
+  <script src="{{ '/assets/js/home-explainers.js' | relative_url }}" defer></script>
 
   <section class="collaborations section wrap" aria-labelledby="collaborations-title">
     <h2 id="collaborations-title">Collaborative work</h2>

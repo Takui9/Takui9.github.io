@@ -14,3 +14,7 @@
   .home-explainer-copy h3 { font-size: 22px; }
   .home-explainer-description { max-width: 65ch; }
 }
+.home-explainer-selector { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 18px; }
+.home-explainer-selector[hidden] { display: none; }
+.home-explainer-selector button { padding: 3px 0; color: var(--muted); background: transparent; border: 0; border-bottom: 1px solid transparent; font-size: 12px; }
+.home-explainer-selector button[aria-pressed='true'] { color: var(--blue); border-bottom-color: var(--blue); }

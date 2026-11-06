@@ -414,3 +414,21 @@ Homepage feature release completed:
   stylesheet and shared styles. Post-merge approved: placement, 7:5 layout,
   <=800px stack, copy, links, captions and manual playback are correct.
 - Review remains source/HTML/CSS based; browser visual testing is unavailable.
+
+
+## Default humanoid and three manual explainer selections — approved, publishing
+
+User requested humanoid or three rotating explainers. Astra recommended default
+humanoid plus three simple manual selectors, keeping the academic homepage calm
+and avoiding interrupted reading. Root implemented this recommendation.
+
+The selected film's title, duration, venue/year, description, links, poster,
+source, caption track and attribution update together. Switching pauses the old
+video and never plays the new one automatically. CPG captions are cleared for
+the external films; external films retain Takahiro Miki credit and original
+walkthrough links. JavaScript-free fallback remains a playable humanoid film.
+
+Production build passed. Source and minified production code passed DOM
+interaction checks; default human, subtitle scope, other seven unchanged HTML
+pages and cache-versioned component CSS also passed. Astra approved the actual
+generated HTML and CSS/JS. Publishing through the main workflow.
