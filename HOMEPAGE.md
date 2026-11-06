@@ -360,3 +360,20 @@ and [Pages deployment](https://github.com/Takui9/Takui9.github.io/actions/runs/4
 All eight public HTML pages match the reviewed build byte for byte. The 28 local
 resource links, explainer CSS/JS/VTT, complete new film hash and 206 streaming
 range data passed public checks.
+
+
+### Homepage explainer feature
+
+Astra recommended the reference's research-first ordering: Selected publications,
+one compact Paper explainers block, then Collaborative work. Home now features
+the site's 90-second CPG explanation in a 7:5 media/copy row. At 800px and below,
+copy precedes the full 16:9 player. The component reads its selected paper,
+duration and URLs from existing data; `home_title` and `home_summary` supply the
+short reviewed text.
+
+The native player uses `controls`, `playsinline`, `preload="none"`, English
+captions and the existing poster. It has no autoplay or loop. The existing
+experiment-video behavior pauses it offscreen. It does not change the original
+hero or About section. Two plain links reach the interactive CPG page and all
+three explainers. Astra approved the generated HTML/CSS and playback behavior
+from source; no browser visual testing is claimed.

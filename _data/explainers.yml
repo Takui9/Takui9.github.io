@@ -35,6 +35,8 @@
 - id: cpg
   paper_id: cpg
   slug: online-cpg-optimization
+  home_title: Online CPG optimization
+  home_summary: How Bayesian optimization adapts a rhythmic locomotion controller to changing conditions.
   duration: "1:30"
   duration_seconds: 90
   video: /assets/video/cpg-explainer.mp4

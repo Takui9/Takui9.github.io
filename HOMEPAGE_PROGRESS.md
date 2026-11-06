@@ -382,3 +382,19 @@ reviewed scenes. Attribution, experiment scope and final copy corrections are
 correct. Post-merge approved, with no further source fixes needed. Review remains
 limited to public content/resources and encoded frames, not browser playback or
 screen-reader testing.
+
+
+## Homepage featured paper explainer — approved, publishing
+
+User asked Astra how to place a directly visible Paper Explainer on Home. After
+comparing the fresh reference homepage, Astra recommended a single CPG player
+after Selected publications and before Collaborative work. Root implemented a
+7:5 media/copy layout, stacked copy-then-media at 800px, existing 16:9 poster,
+manual native playback, English captions, and two links to the CPG explanation
+and the three-explainer directory. Featured title/description/duration are data
+driven. No new promotional headline or collage was added.
+
+Astra reviewed the generated Home HTML/CSS and playback source and approved it
+without changes. Other seven HTML pages remain byte-identical; the original
+video assets and 47-second hero teaser are unchanged. Browser visual testing
+remains unavailable. Preparing the main-branch release.

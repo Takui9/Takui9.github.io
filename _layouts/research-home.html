@@ -41,6 +41,25 @@
     {% endfor %}
   </section>
 
+  {% assign featured_explainer = site.data.explainers | where: 'id', 'cpg' | first %}
+  {% assign featured_paper = site.data.research.papers | where: 'id', featured_explainer.paper_id | first %}
+  <section class="home-explainer section wrap" id="paper-explainers" aria-labelledby="paper-explainers-title">
+    <div class="home-explainer-copy">
+      <h2 id="paper-explainers-title">Paper explainers</h2>
+      <p class="project-meta">{{ featured_paper.venue }} {{ featured_paper.year }} · {{ featured_explainer.duration }}</p>
+      <h3>{{ featured_explainer.home_title }}</h3>
+      <p class="home-explainer-description">{{ featured_explainer.home_summary }}</p>
+      <div class="home-explainer-links"><a href="{{ '/explainers/' | append: featured_explainer.slug | append: '/' | relative_url }}">Explore this paper →</a><a href="{{ '/explainers/' | relative_url }}">All {{ site.data.explainers | size }} explainers →</a></div>
+    </div>
+    <figure class="home-explainer-media">
+      <video class="experiment-video" controls playsinline preload="none" poster="{{ featured_explainer.poster | relative_url }}" width="1280" height="720" aria-label="{{ featured_explainer.duration_seconds }}-second narrated explainer: {{ featured_paper.title | escape }}">
+        <source src="{{ featured_explainer.video | relative_url }}" type="video/mp4">
+        <track kind="captions" src="{{ featured_explainer.captions | relative_url }}" srclang="en" label="English" default>
+      </video>
+      <figcaption>Synthetic narration</figcaption>
+    </figure>
+  </section>
+
   <section class="collaborations section wrap" aria-labelledby="collaborations-title">
     <h2 id="collaborations-title">Collaborative work</h2>
     {% assign collaboration = site.data.research.papers | where: 'id', 'acp' | first %}
