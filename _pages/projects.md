@@ -33,7 +33,7 @@ description: Zewei Zhang's research on adapting motion priors through CPG parame
 {% endfor %}
 <section class="related-collaboration" aria-labelledby="related-collaboration-title">
   <h2 id="related-collaboration-title">Related collaboration</h2>
-  <p>I am also a coauthor of <a href="{{ '/papers/' | relative_url }}#acp">Humanoid Mobility via Attention-based Contacts</a>, which studies whole-body humanoid mobility through contact planning.</p>
+  <p>I also coauthored <a href="{{ '/papers/' | relative_url }}#acp">Humanoid Mobility via Attention-based Contacts</a>, which uses predicted body–environment contacts to guide whole-body humanoid motion.</p>
 </section>
 <section class="project-earlier" aria-labelledby="earlier-projects-title">
   <h2 id="earlier-projects-title">Earlier projects</h2>

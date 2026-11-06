@@ -10,7 +10,7 @@ papers:
     paper_url: https://arxiv.org/abs/2610.31608
     project_url: https://leggedrobotics.github.io/ACP/
     citation: /assets/citations/acp.bib
-    summary: An attention-based contact planner and contact-conditioned controller for whole-body humanoid mobility.
+    summary: An attention-based planner predicts body–environment contacts, which a contact-conditioned controller uses to coordinate whole-body motion.
 
   - id: wholebody
     project_id: human
@@ -26,7 +26,7 @@ papers:
     preview: /assets/video/human-adaptation.mp4
     poster: /assets/img/human-poster.jpg
     media_alt: Unitree G1 climbing up and down a box
-    summary: A terrain-aware motion generator adapts human motion priors for coordinated whole-body locomotion on a G1 humanoid, using onboard perception and computation.
+    summary: A diffusion model generates terrain-aware references from human motion, while an RL-trained tracker executes them on a Unitree G1 with onboard perception and computation.
 
   - id: animal-priors
     project_id: animal
@@ -40,8 +40,8 @@ papers:
     citation: /assets/citations/animal-priors.bib
     preview: /assets/video/animal-adaptation.mp4
     poster: /assets/img/animal-poster.jpg
-    media_alt: ANYmal walking on grass with adapted animal motion priors
-    summary: A high-level residual policy adapts dog motion priors to uneven terrain, stairs, and goal-directed navigation on ANYmal.
+    media_alt: ANYmal-D walking through grass.
+    summary: A high-level policy combines learned dog locomotion skills with joint-level residual corrections for terrain traversal and local navigation on ANYmal-D.
 
   - id: cpg
     project_id: rhythms
@@ -56,17 +56,17 @@ papers:
     citation: /assets/citations/cpg.bib
     preview: /assets/video/cpg-adaptation.mp4
     poster: /assets/img/cpg-poster.jpg
-    media_alt: Online optimization experiments with central pattern generators
-    summary: Online Bayesian optimization adapts biologically inspired CPG parameters to changing commands, terrain conditions, and payloads on a Go1 quadruped.
+    media_alt: Unitree Go1 locomotion experiments with reduced friction, an added payload, and an incline.
+    summary: Online Bayesian optimization adapts a CPG-based controller to changes in velocity commands, ground friction, slope, and payload on a Unitree Go1.
 
 story:
   intro: >-
-    My research investigates how motion priors can support locomotion when commands,
-    terrain, and task requirements change. These three studies examine different
-    locations for adaptation: the parameters of a biologically inspired controller,
-    a high-level policy built on animal skills, and terrain-aware references
-    generated from human motion. Together, they explore how to retain useful
-    movement structure while responding to the environment.
+    My research asks how robots can adapt motion priors to changing commands,
+    terrain, and physical conditions. These studies explore three approaches:
+    optimizing the parameters of a CPG-based controller, adding residual corrections
+    to learned animal skills, and generating terrain-aware references from human
+    motion. The common aim is to preserve useful movement patterns while allowing
+    the robot to respond to its surroundings.
   studies:
     - id: rhythms
       paper_id: cpg
@@ -77,8 +77,8 @@ story:
       adaptation: Online parameter optimization
       robot: Unitree Go1
       paragraphs:
-        - Central pattern generators provide a compact, biologically inspired structure for rhythmic locomotion. Their parameters still need to match the robot’s commands and operating conditions.
-        - At EPFL’s BioRob, I investigated online Bayesian optimization of these parameters, enabling a quadruped to adapt to changes in target velocity, ground friction, slope, and payload. Hardware experiments on the Unitree Go1 examine adaptation directly on the robot. Here, the motion structure remains a CPG, while its parameters change through real-world interaction.
+        - Controllers based on central pattern generators (CPGs) encode rhythmic locomotion with a small set of parameters. This work uses Bayesian optimization to update those parameters online, balancing velocity tracking and energy use.
+        - Contextual information helps the optimizer respond to changes in slope and payload, while reusing previous trials supports changes in target velocity. Experiments in simulation and on a Unitree Go1 evaluate adaptation to velocity commands, ground friction, slope, and payload. The controller retains its oscillator structure while learning parameter settings through interaction.
     - id: animal
       paper_id: animal-priors
       title: Residual adaptation of animal motion priors
@@ -86,10 +86,10 @@ story:
       lab: ETH Zurich RSL
       prior: Dog motion capture
       adaptation: High-level residual policy
-      robot: ANYmal
+      robot: ANYmal-D
       paragraphs:
-        - Animal motion capture provides reusable locomotion skills, but imitation on flat ground does not by itself address uneven terrain. This work first trains a low-level policy to imitate dog motion, establishing reusable movement skills.
-        - A high-level, goal-conditioned policy then learns residual corrections that adapt those skills to terrain and navigation requirements. Experiments on ANYmal demonstrate stair traversal, uneven-ground locomotion, and local navigation. Adaptation operates through the residual policy while retaining the movement structure supplied by the animal prior.
+        - Dog motion-capture data provide demonstrations of locomotion on flat ground. A low-level policy learns to imitate these motions and is then frozen, preserving a reusable set of movement skills.
+        - A goal-conditioned high-level policy supplies latent motion commands and adds joint-level residual corrections for uneven terrain and obstacle avoidance. Training penalizes large residuals to balance adaptation with fidelity to the motion prior. Hardware experiments on ANYmal-D demonstrate stair traversal and local navigation among obstacles.
     - id: human
       paper_id: wholebody
       title: Terrain-aware generation from human motion priors
@@ -99,5 +99,5 @@ story:
       adaptation: Terrain-aware reference generation
       robot: Unitree G1
       paragraphs:
-        - Human motion provides coordinated whole-body skills, but fixed reference trajectories cannot accommodate every terrain arrangement. This framework uses a diffusion model to generate terrain-aware motion references and a learned tracker to execute them on a humanoid.
-        - The tracker is trained with reinforcement learning, then fine-tuned in closed loop with the motion generator frozen. The motion generator conditions its references on terrain; the framework does not use a separate residual adaptation policy. Onboard experiments on the Unitree G1 demonstrate coordinated traversal of boxes, hurdles, stairs, and mixed terrain.
+        - Human motion provides coordinated whole-body demonstrations, but fixed references limit adaptation to new terrain. This framework trains a diffusion model on retargeted human motion to generate references conditioned on terrain, target direction, and recent robot states.
+        - An RL-trained tracker executes these references and is fine-tuned in closed loop with the generator frozen. Terrain observations also allow the tracker to adjust execution when references are imperfect. The system does not add a separate residual adaptation policy. Hardware experiments on the Unitree G1 demonstrate box climbing, hurdle traversal, stairs, and mixed-terrain transitions, with perception and computation onboard.

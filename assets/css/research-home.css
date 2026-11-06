@@ -159,6 +159,12 @@ h3 a { color: var(--ink); }
 .bibliography-entry .authors { font-size: 14px; max-width: 94ch; }
 .bibliography-entry .paper-links { margin-top: 14px; }
 .author-role { color: var(--blue); }
+.course-project { max-width: 900px; }
+.course-credits { margin: 0 0 38px; padding: 0 0 20px; border-top: 0; border-bottom: 1px solid var(--line); }
+.course-project > p { color: #4b5661; max-width: 80ch; }
+.course-project > p + p { margin-top: 15px; }
+.course-project .project-media { margin-block: 28px; }
+.course-project .project-media img { width: 100%; height: auto; }
 @media (max-width: 900px) {
   .project-study { grid-template-columns: 1fr; gap: 25px; padding-block: 40px; }
   .project-media { max-width: 620px; width: 100%; }

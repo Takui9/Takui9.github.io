@@ -3,11 +3,11 @@ layout: research-page
 title: Papers
 permalink: /papers/
 nav_key: papers
-description: Publications by Zewei Zhang, including full authors, publication status, research context, and arXiv BibTeX citations.
+description: Publications by Zewei Zhang on legged locomotion and whole-body control, with author lists, publication details, and BibTeX citations.
 ---
 <header class="page-heading">
   <h1>Papers</h1>
-  <p>Publications on legged locomotion and whole-body control. The <a href="{{ '/projects/' | relative_url }}">Projects</a> page explains how the three first-author studies connect.</p>
+  <p>Publications on legged locomotion and whole-body control. The <a href="{{ '/projects/' | relative_url }}">Projects</a> page connects my first-author work through the adaptation of motion priors.</p>
 </header>
 {% assign years = site.data.research.papers | group_by: 'year' %}
 <nav class="year-index" aria-label="Publication years">{% for year in years %}<a href="#year-{{ year.name }}">{{ year.name }}</a>{% endfor %}</nav>

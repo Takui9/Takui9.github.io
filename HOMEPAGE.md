@@ -2,8 +2,8 @@
 
 The homepage uses `_layouts/research-home.html`, `assets/css/research-home.css`,
 and `assets/js/research-home.js`. `_pages/about.md` retains the root permalink.
-The research pages share the new layout; the CPG project page keeps its original
-layout. CI uses Ruby 3.3, locked gems, and ImageMagick; no frontend build step is
+All four published pages share the research layout, including the earlier
+CPG-RL course project. CI uses Ruby 3.3, locked gems, and ImageMagick; no frontend build step is
 required.
 
 ## Research pages and shared content
@@ -235,3 +235,46 @@ verification is still unavailable. No commit, push, or deployment was performed.
   identifies Zewei in the original Zewei-specific project list.
 - No new current appointment, dates of employment, or claimed achievements were
   inferred from third-party profile aggregators or people with the same name.
+
+
+## Complete copy and factual review (6 November 2026)
+
+GPT-6 Astra reviewed all text on Home, Projects, Papers, and the CPG-RL course
+project page, including metadata, media descriptions, navigation, and playback
+labels. Root implemented its final copy; Astra then re-read all four actual
+production HTML pages and approved them without further text or factual changes.
+
+The adaptation storyline now covers changing commands, terrain, and physical
+conditions. It presents the three approaches in parallel, without implying
+that they all update model weights during deployment or that a later approach
+replaces an earlier one.
+
+| Claim or correction | Primary evidence |
+| --- | --- |
+| CPG parameters updated by online Bayesian optimization; contextual slope/payload information and reuse of trials for velocity changes | [CPG paper, III-A and IV](https://arxiv.org/html/2410.16417v1) |
+| Frozen low-level dog-motion policy; high-level latent commands and joint residuals; residual penalty; ANYmal-D experiments | [Animal-prior paper, 3.1–3.3, 4.2.3, 4.3](https://arxiv.org/html/2505.16084v2) |
+| Terrain/direction/history-conditioned diffusion generator; terrain-aware RL tracker; closed-loop tracker fine-tuning with generator frozen | [Humanoid paper, III-B–D and IV-A](https://arxiv.org/html/2604.17335v2) |
+| Predicted body–environment contacts guide humanoid control; ACP coauthor attribution and under-review status | [ACP paper and author list](https://arxiv.org/html/2610.31608v1), [arXiv record](https://arxiv.org/abs/2610.31608) |
+| RA-L 2026 | [Coauthor Xue Bin Peng's project page](https://xbpeng.github.io/projects/Humanoid_Parkour/index.html) |
+| CoRL 2025 | [Official project page](https://anymalprior.github.io/) |
+| IROS 2024 | [arXiv acceptance information](https://arxiv.org/abs/2410.16417); Oral presentation is retained from Zewei's original homepage, not independently established by the abstract |
+| CPG-RL is a course project; Bellegarda/Ijspeert are instructors; only simulation results are claimed | Original Zewei-specific course-project listing and project description in Git history; the [cited CPG-RL paper](https://arxiv.org/abs/2211.00458) is separate prior work |
+
+The CPG-RL page now explicitly separates project credit from instructor credit,
+corrects Bellegarda's spelling, removes a typo and an unsupported efficiency
+comparison, and shares the site's current navigation and typography. Its image
+remains the original simulation screenshot. “Extended highlights” accurately
+labels the longer edited reel. All video files and canonical publication
+metadata/citation exports are preserved.
+
+Biography refinements use Zewei's original self-description and the public
+[LinkedIn record](https://ch.linkedin.com/in/zewzhang); they add no current
+appointment or inferred employment dates. The full LinkedIn page was not
+accessible; the indexed public record and original self-description are the
+provenance, rather than a claimed full-profile review.
+
+Verification: actual production Jekyll build, four-page HTML structure and
+resource/anchor checks, author/role metadata preservation, production exclusions,
+video byte hashes, and cue-content comparisons passed. Production JSON whitespace
+is minified. Astra's final check covered generated text, not new browser visual
+inspection or continuous video playback.

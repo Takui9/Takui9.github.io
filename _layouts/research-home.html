@@ -11,11 +11,11 @@
     </video>
     <div class="hero-copy">
       <h1 id="hero-title">Zewei Zhang</h1>
-      <p class="hero-lede">I study robot learning, with a focus on legged locomotion and whole-body control.</p>
-      <p class="hero-background">I completed my MSc in Mechanical Engineering at EPFL, with research experience at EPFL’s BioRob and ETH Zurich’s Robotic Systems Lab.</p>
+      <p class="hero-lede">I work on robot learning for legged locomotion and whole-body control.</p>
+      <p class="hero-background">I earned my MSc in Mechanical Engineering at EPFL, with research experience at EPFL’s BioRob and ETH Zurich’s Robotic Systems Lab.</p>
       <div class="personal-links"><a href="mailto:{{ site.email }}">Email</a><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a><a href="https://github.com/Takui9">GitHub</a></div>
     </div>
-    <div class="reel-controls"><a href="{{ '/assets/video/research-reel-full.mp4' | relative_url }}">Full research video ↗</a><button id="reel-toggle" type="button" aria-label="Play research highlights">Play <span aria-hidden="true">▶</span></button></div>
+    <div class="reel-controls"><a href="{{ '/assets/video/research-reel-full.mp4' | relative_url }}">Extended highlights ↗</a><button id="reel-toggle" type="button" aria-label="Play research highlights">Play <span aria-hidden="true">▶</span></button></div>
     <p class="reel-caption">ANYmal / G1 <span aria-hidden="true">·</span> {{ site.data.reel.duration | round }} seconds</p>
   </section>
 
@@ -23,14 +23,14 @@
     <div class="about-copy">
       <h2 id="about-title">About me</h2>
       <p>During my MSc at EPFL, I worked with <a href="https://www.epfl.ch/labs/biorob/people/ijspeert/">Prof. Auke Ijspeert</a> at the <a href="https://www.epfl.ch/labs/biorob/">Biorobotics Laboratory</a> and <a href="https://rsl.ethz.ch/the-lab/people.html">Prof. Marco Hutter</a> at <a href="https://rsl.ethz.ch/">ETH Zurich’s Robotic Systems Lab</a>.</p>
-      <p>Before EPFL, I studied at Waseda University in Tokyo, where I focused on space exploration. Outside research, I enjoy basketball and hotpot.</p>
+      <p>Before EPFL, I completed my bachelor’s degree at Waseda University in Tokyo, focusing on space exploration. Outside research, I enjoy basketball and hotpot.</p>
     </div>
     <img class="portrait" src="{{ '/assets/img/prof_zewei.jpeg' | relative_url }}" alt="Zewei Zhang" width="160" height="190" loading="lazy">
   </section>
 
   <section class="publications section wrap" id="research" aria-labelledby="research-title">
     <h2 id="research-title">Selected publications</h2>
-    <p class="research-note">My research explores how motion priors can adapt to real-world terrain through online optimization, residual policies, and terrain-aware motion generation. <a href="{{ '/projects/' | relative_url }}">Research projects ↗</a></p>
+    <p class="research-note">My research explores how motion priors can be adapted to changing commands, terrain, and physical conditions through parameter optimization, residual policies, and motion generation. <a href="{{ '/projects/' | relative_url }}">Research projects ↗</a></p>
 
     {% assign selected_papers = site.data.research.papers | where: 'first_author', true %}
     {% for paper in selected_papers %}

@@ -1,98 +1,25 @@
 ---
-layout: default
+layout: research-page
+title: Deep Reinforcement Learning for Quadruped Locomotion with Central Pattern Generators
+permalink: /cpg_rl.html
+nav_key: projects
+description: An EPFL course project exploring learned force feedback for CPG-based quadruped locomotion in simulation.
 ---
-
-<!-- <!DOCTYPE html> -->
-<html>
-
-
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-        <div class="column has-text-centered">
-          <h1 align="center" class="title is-1 publication-title"><b>	
-            	Deep Reinforcement Learning for Quadruped Locomotion with Central Pattern Generators</b></h1>
-          <div class="column is-full_width">
-          </div>
-          <br>
-          <div align="center" class="is-size-5 publication-authors">
-              <!-- <span class="author-block"> -->
-                <h5 align="center" class="title is-1 publication-title">
-                  <b>
-                <a href="https://takui9.github.io/">Zewei Zhang</a></span></span>&nbsp;&nbsp;&nbsp;&nbsp;
-              <!-- </span> -->
-              <span class="author-block">
-                <a href="https://www.researchgate.net/profile/Guillaume-Bellegarda">Guillaume Bellergarda</a></span></span>&nbsp;&nbsp;&nbsp;&nbsp;
-              </span>
-            <span class="author-block">
-              <a href="https://www.epfl.ch/labs/biorob/people/ijspeert/">Auke Ijspeert</a></span></span>&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            </b>
-            <br><br>
-            <span class="author-block"><a href="https://www.epfl.ch/labs/biorob/">Biorobotics Laboratory (BioRob), EPFL</a></span>
-            </h5>
-          </div>
-          </div>
-        </div>
-    </div>
-  </div>
+<header class="page-heading">
+  <h1>{{ page.title }}</h1>
+  <p>Course project · <a href="https://www.epfl.ch/labs/biorob/">Biorobotics Laboratory (BioRob), EPFL</a></p>
+</header>
+<section class="course-project" aria-labelledby="overview-title">
+  <dl class="project-facts course-credits">
+    <dt>Project</dt><dd>Zewei Zhang</dd>
+    <dt>Instructors</dt><dd><a href="https://www.researchgate.net/profile/Guillaume-Bellegarda">Guillaume Bellegarda</a> and <a href="https://www.epfl.ch/labs/biorob/people/ijspeert/">Auke Ijspeert</a></dd>
+  </dl>
+  <h2 id="overview-title">Overview</h2>
+  <p>This course project explores how sensory feedback can complement central pattern generators (CPGs) in reinforcement learning for quadruped locomotion. Building on <a href="https://arxiv.org/abs/2211.00458">CPG-RL</a>, it incorporates force feedback inspired by the <a href="https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2017.00029/full">Tegotae-based approach</a>.</p>
+  <p>The policy learns the strength of force feedback from the robot’s proprioceptive observations. The resulting controller was evaluated in simulation on uneven terrain, examining how learned feedback can adapt rhythmic locomotion to interactions with the ground.</p>
+  <figure class="project-media">
+    <img src="{{ '/assets/img/CPG_RL_Tegotae.png' | relative_url }}" alt="Quadruped traversing uneven terrain in simulation." width="1228" height="524" loading="lazy">
+    <figcaption>Evaluation on uneven terrain in simulation.</figcaption>
+  </figure>
+  <p><a href="{{ '/projects/' | relative_url }}">All projects ↗</a></p>
 </section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- <div align="center"><img src="assets/img/mp.gif" width="90%" class="center"/></div> -->
-    <br><hr>
-      <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <br>
-        <h2 align="left" class="title is-3"><b>Description</b></h2>
-        <br>
-        <div class="content has-text-justified">
-          <p>
-
-            This project aims to develop a deep reinforcement learning framework for quadruped locomotion with central pattern generators (CPGs), 
-            a biologically-inspired controller. Generally, CPGs located in the spinal cord are used to generate rhythmic patterns for animals and 
-            are considered a key component for agile locomotion control. It has widelyj been used in the locomotion of robotics. However, parameter 
-            tuning remains challenging, typically done by hand or optimization methods such as genetic algorithms. On the other hand, deep reinforcement 
-            learning has been widely used in robotics to learn powerful feedback control. However, it requires hand-crafted reward design to guide the 
-            learning process and acquire the desired behavior. Therefore, we would like to combine the advantages of both CPGs and deep reinforcement learning 
-            to develop a framework that can learn the locomotion control policy for quadruped robots more efficiently. In this work, we follow 
-            the idea of the previous work, <a href="https://arxiv.org/abs/2211.00458"> CPG-RL</a>, and propose a sensory-feedback based CPG-RL framework, 
-            inspired by the <a href="https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2017.00029/full">tegotae-based approach</a>. 
-            Our framework explicitly learns the weight of force feedback based on the robot's proprioception and shows robust locomotion performance on
-            the rough terrains in the simulation evaluation environment.
-          </p>
-          <br>
-          <div align="center"><img src="assets/img/CPG_RL_Tegotae.png" width="100%" class="center"/></div>
-          <br>
-          <br>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-    
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered"> -->
-      <!-- <div class="column is-four-fifths"> -->
-        <!-- <div class="column is-full_width">
-          <hr><br>
-        <h2 align="center" class="title is-3"><b>Video</b></h2>
-        <br>
-        <div align="center" class="video-container"> -->
-          <!-- <iframe src="https://www.youtube.com/embed/4saCcrD37qA"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4saCcrD37qA?controls=0" title="YouTube video player" 
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </video>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
-    <br>
-  </div>
-</section>
-
-</body>
-</html>

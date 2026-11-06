@@ -22,11 +22,13 @@ GitHub Pages deployment workflow.
 
 ## Current work
 
-Latest result: the approved site has been published at https://takui9.github.io/.
-GitHub build and Pages deployment both succeeded. Public resource/content checks
-passed, and Astra approved handoff without blockers. The local visual dashboard is
-`_homepage-progress.html`; it refreshes every 15 seconds. Actual browser
-rendering remains unverified because browser/Computer Use access is unavailable.
+Latest result: the complete text/factual audit is approved by Astra, including
+its final read of all four generated production pages. Root implemented the
+refinements and all production checks passed. Automatic publication of this
+revision is in progress. The site remains at https://takui9.github.io/.
+The local visual dashboard is `_homepage-progress.html`; it refreshes every
+15 seconds. Actual browser rendering remains unverified because browser/Computer
+Use access is unavailable.
 
 ## Main files
 
@@ -249,3 +251,30 @@ with native image generation/minification passed.
   fresh-live verification was performed by root, not independently by Astra.
 - Browser visual inspection remains unavailable under this environment's
   browser/Computer Use restrictions.
+
+
+## Full copy and factual audit — reviewed, publishing (6 November 2026)
+
+User requested Astra review and refine all published text, verify claims against
+the papers, then automatically publish the revised version. Scope: Home,
+Projects, Papers, the earlier CPG-RL page, shared navigation/footer, metadata,
+image/video descriptions, and playback labels.
+
+Root downloaded the four latest full arXiv HTML papers and three official
+project pages into `/tmp/zewei-copy-audit/`, and extracted all current public
+copy for coverage. Astra is reviewing language, adaptation mechanisms, hardware
+versus simulation claims, authors, venues/status, and biography provenance.
+Confirmed RA-L 2026 against Xue Bin Peng's coauthor project page; CoRL 2025 and
+IROS 2024 against the papers and Zewei's public LinkedIn record. No new current
+appointment is inferred. Existing approved video assets will be preserved.
+
+Astra's complete review and final generated-HTML review both passed. Implemented
+language refinements throughout the four pages; clarified CPG context/data reuse,
+the frozen animal low-level policy and joint residuals, and the humanoid tracker’s
+terrain input/closed-loop fine-tuning. Corrected CPG-RL course-project/instructor
+attribution, name spelling, and simulation-only scope. Extended reel label now
+reads “Extended highlights.” Full evidence map is in `HOMEPAGE.md`.
+
+Production generation, all four pages' HTML/navigation/resources/anchors,
+metadata/author/role preservation, exclusions, and unchanged approved video
+checks passed. The revision is ready and being pushed for automatic deployment.
