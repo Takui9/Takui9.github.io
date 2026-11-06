@@ -22,13 +22,12 @@ GitHub Pages deployment workflow.
 
 ## Current work
 
-Latest result: the homepage directly features the 90-second CPG explainer
-after Selected publications and before Collaborative work. Astra approved the
-layout/copy and rechecked the merged public version. Desktop uses a 7:5 video/copy
-row; mobile puts text above the full 16:9 player. Playback is manual with English
-captions. All eight live pages, 29 resources and video range checks passed.
-The homepage feature uses an independent stylesheet for cache-safe loading.
-Local dashboard: `_homepage-progress.html`.
+Latest result: the homepage defaults to the humanoid explainer, with three
+manual buttons for Humanoid, Quadruped and CPG. Switching pauses the previous
+film, updates text/links/credit and captions, and never autoplays the next film.
+Source and minified DOM tests passed. Astra approved the generated version and
+independently rechecked the published Home/CSS/JS. All eight public pages and
+30 resources passed live checks. Local dashboard: `_homepage-progress.html`.
 
 ## Main files
 
@@ -416,7 +415,7 @@ Homepage feature release completed:
 - Review remains source/HTML/CSS based; browser visual testing is unavailable.
 
 
-## Default humanoid and three manual explainer selections — approved, publishing
+## Default humanoid and three manual explainer selections — published and approved
 
 User requested humanoid or three rotating explainers. Astra recommended default
 humanoid plus three simple manual selectors, keeping the academic homepage calm
@@ -432,3 +431,11 @@ Production build passed. Source and minified production code passed DOM
 interaction checks; default human, subtitle scope, other seven unchanged HTML
 pages and cache-versioned component CSS also passed. Astra approved the actual
 generated HTML and CSS/JS. Publishing through the main workflow.
+
+Published source `149bb9d1675e`, build `6236e4f7e0a1`. Source run
+https://github.com/Takui9/Takui9.github.io/actions/runs/42179350986 and Pages run
+https://github.com/Takui9/Takui9.github.io/actions/runs/42179424752 succeeded.
+All eight public HTML pages and selector CSS/JS match the approved build;
+30 local resources return 200. Astra's independent public snapshot comparison
+and post-merge check passed. No further changes required; browser real-media
+playback testing remains unavailable.

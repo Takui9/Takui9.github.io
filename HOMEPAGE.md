@@ -377,7 +377,7 @@ selected poster. CPG supplies English captions; external explainers retain
 Takahiro Miki attribution and an original-walkthrough link. There is no autoplay
 or automatic rotation. The existing
 experiment-video behavior pauses it offscreen. It does not change the original
-hero or About section. Two plain links reach the interactive CPG page and all
+hero or About section. Two plain links reach the selected interactive explanation and all
 three explainers. Astra approved the generated HTML/CSS and playback behavior
 from source; no browser visual testing is claimed.
 
@@ -407,3 +407,10 @@ JS passed all three selections, pause/no autoplay, metadata/link/credit updates,
 caption replacement, and no reload on reselection. The other seven pages remain
 byte-identical. Home CSS uses `?v=2` for returning visitors. Astra reviewed the
 production HTML and source logic without browser/media-interaction testing.
+
+The three-item homepage selection is published from `149bb9d1675e` in build
+`6236e4f7e0a1`. [Source workflow 42179350986](https://github.com/Takui9/Takui9.github.io/actions/runs/42179350986)
+and [Pages 42179424752](https://github.com/Takui9/Takui9.github.io/actions/runs/42179424752)
+succeeded. All eight public HTML pages, component CSSv2, switching JS and 30
+linked local resources passed live checks. Astra independently compared the
+public Home/CSS/JS to the approved build and gave post-merge approval.
