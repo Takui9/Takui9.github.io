@@ -379,3 +379,9 @@ three explainers. Astra approved the generated HTML/CSS and playback behavior
 from source; no browser visual testing is claimed.
 
 The homepage feature loads its component CSS separately (`assets/css/home-explainer.css`), so the new layout does not depend on a previously cached shared stylesheet.
+
+The homepage feature is published from `49e61e87053d` in build `b4bc83d38c0c`;
+[Pages run 42177466538](https://github.com/Takui9/Takui9.github.io/actions/runs/42177466538)
+succeeded. All eight public pages and component assets match the approved build.
+Astra's independent post-merge HTML/CSS review approved the public implementation
+without further changes.

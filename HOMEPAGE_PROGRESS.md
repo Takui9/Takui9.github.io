@@ -22,13 +22,13 @@ GitHub Pages deployment workflow.
 
 ## Current work
 
-Latest result: Paper explainers are live at https://takui9.github.io/explainers/.
-The two existing films are embedded with original credit and true 1:40/1:50
-durations. The new 1:30 IROS explainer includes narration, English captions,
-transcript, eight interactive scenes, glossary and paper figures. Astra approved
-the final content, encoded frames and interaction logic. All eight public pages,
-28 local resources and the full new video passed live checks. Source build and
-Pages deployment both succeeded. Local dashboard: `_homepage-progress.html`.
+Latest result: the homepage directly features the 90-second CPG explainer
+after Selected publications and before Collaborative work. Astra approved the
+layout/copy and rechecked the merged public version. Desktop uses a 7:5 video/copy
+row; mobile puts text above the full 16:9 player. Playback is manual with English
+captions. All eight live pages, 29 resources and video range checks passed.
+The homepage feature uses an independent stylesheet for cache-safe loading.
+Local dashboard: `_homepage-progress.html`.
 
 ## Main files
 
@@ -384,7 +384,7 @@ limited to public content/resources and encoded frames, not browser playback or
 screen-reader testing.
 
 
-## Homepage featured paper explainer — approved, publishing
+## Homepage featured paper explainer — published and post-merge approved
 
 User asked Astra how to place a directly visible Paper Explainer on Home. After
 comparing the fresh reference homepage, Astra recommended a single CPG player
@@ -400,3 +400,17 @@ video assets and 47-second hero teaser are unchanged. Browser visual testing
 remains unavailable. Preparing the main-branch release.
 
 Release check observed a ten-minute shared stylesheet cache. The new home-only component CSS was separated into a newly loaded file to avoid stale styling for returning visitors; the reviewed layout and copy are unchanged.
+
+Homepage feature release completed:
+
+- Feature source `64d0d9802cb0`; cache-safe component loading `49e61e87053d`.
+- Published build `b4bc83d38c0c`. Source workflow
+  https://github.com/Takui9/Takui9.github.io/actions/runs/42177367922 and Pages
+  https://github.com/Takui9/Takui9.github.io/actions/runs/42177466538 succeeded.
+- All eight public pages match the approved build. Featured component CSS,
+  shared CSS and playback JS match; all 29 local resources return 200 and
+  featured-film range streaming returns valid 206 data.
+- Astra independently reviewed the fresh public Home HTML, isolated component
+  stylesheet and shared styles. Post-merge approved: placement, 7:5 layout,
+  <=800px stack, copy, links, captions and manual playback are correct.
+- Review remains source/HTML/CSS based; browser visual testing is unavailable.
