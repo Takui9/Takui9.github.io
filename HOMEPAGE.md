@@ -449,3 +449,26 @@ succeeded. All eight public pages and the timeline CSS match the reviewed build,
 and 31 linked local resources passed. Astra independently approved the merged
 public About/date/role/style implementation with no changes. Private source
 intermediates were removed after review; the original supplied PDF is preserved.
+
+
+## ACP collaboration media alignment
+
+Home now uses the same publication grid for ACP as for the selected papers.
+Projects reuses the study grid with concise paper details on the right. ACP
+remains below its separate collaboration heading, outside the three research
+chapters, with complete authors, Coauthor and Under review labels. The title,
+author order, summary and paper/project destinations are unchanged.
+
+Both pages share `_includes/collaboration-media.html` and
+`/assets/img/acp-ladder.jpg`. The image comes from the official ACP project
+`static/videos/skills/ladder.mp4`, at 6.0 seconds. Astra selected the frame and
+approved a 864×486 crop at (230,187), resized to 1280×720. It retains the full
+robot, ladder, platform, hand/foot contacts and visible suspension line. The
+static image links to the official project; no ACP footage enters the teaser.
+
+`assets/css/collaboration-media.css` loads only on Home and Projects via the
+`collaboration_media` front matter flag. Existing grid breakpoints and dimensions
+are reused, with matched media sizing and padding. Papers and all other HTML
+pages remain byte-identical, and original MP4 files are unchanged. Astra
+approved the actual frame, production HTML and responsive CSS before release.
+Review is source/image based; browser visual testing is unavailable.

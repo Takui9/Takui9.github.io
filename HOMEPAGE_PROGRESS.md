@@ -470,3 +470,18 @@ About timeline publication completed:
   remains unavailable.
 - Temporary private CV render/extraction files were removed after review; the
   original user PDF remains untouched outside the repository.
+
+
+## ACP media alignment — implementation review
+
+Astra recommended matching the existing Home publication grid and Projects study
+grid, while retaining the separate collaboration headings, full author list,
+Coauthor / Under review labels and unchanged one-sentence summary. The three
+first-author story chapters and all video assets remain unchanged. Root has
+implemented both layouts and a shared official ladder-climbing hardware still
+selected with Astra. Production checks and final review are next.
+
+Production build and eight-page structure/local-link checks passed. The six
+unaffected pages are byte-identical to the previous approved release, and all
+original MP4 files are unchanged. Astra approved the generated HTML/CSS and
+actual final image without revisions. Publishing via the existing main workflow.

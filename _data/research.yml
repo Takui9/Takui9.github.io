@@ -10,6 +10,8 @@ papers:
     paper_url: https://arxiv.org/abs/2610.31608
     project_url: https://leggedrobotics.github.io/ACP/
     citation: /assets/citations/acp.bib
+    poster: /assets/img/acp-ladder.jpg
+    media_alt: A humanoid robot climbing a ladder in an ACP hardware demonstration.
     summary: An attention-based planner predicts body–environment contacts, which a contact-conditioned controller uses to coordinate whole-body motion.
 
   - id: wholebody

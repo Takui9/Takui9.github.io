@@ -1,5 +1,5 @@
 {%- assign paper = include.paper -%}
-<p class="venue">{{ paper.venue }} {{ paper.year }}{% if paper.status %} <span>· {{ paper.status }}</span>{% endif %}{% if include.context == 'papers' %} <span class="author-role">· {% if paper.first_author %}First author{% else %}Coauthor{% endif %}</span>{% endif %}</p>
+<p class="venue">{{ paper.venue }} {{ paper.year }}{% if paper.status %} <span>· {{ paper.status }}</span>{% endif %}{% if include.context == 'papers' or include.show_role %} <span class="author-role">· {% if paper.first_author %}First author{% else %}Coauthor{% endif %}</span>{% endif %}</p>
 <h3><a href="{{ paper.paper_url }}">{{ paper.title }}</a></h3>
 <p class="authors">{% for author in paper.authors %}{% if author == 'Zewei Zhang' %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
 {% unless include.context == 'papers' %}<p class="summary">{{ paper.summary }}</p>{% endunless %}

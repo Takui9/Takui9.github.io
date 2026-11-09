@@ -3,6 +3,7 @@ layout: research-page
 title: Projects
 permalink: /projects/
 nav_key: projects
+collaboration_media: true
 description: Zewei Zhang's research on adapting motion priors through CPG parameter optimization, residual policies, and terrain-aware motion generation.
 ---
 <header class="page-heading">
@@ -35,12 +36,18 @@ description: Zewei Zhang's research on adapting motion priors through CPG parame
 <section class="related-collaboration" aria-labelledby="related-collaboration-title">
   <h2 id="related-collaboration-title">Related collaboration</h2>
   {% assign collaboration = site.data.research.papers | where: 'id', 'acp' | first %}
-  <article class="project-collaboration" id="acp">
-    <p class="project-meta">{{ collaboration.year }} · {{ collaboration.venue }} · {{ collaboration.status }} · <span class="author-role">Coauthor</span></p>
-    <h3><a href="{{ collaboration.paper_url }}">{{ collaboration.title }}</a></h3>
-    <p class="authors">{% for author in collaboration.authors %}{% if author == 'Zewei Zhang' %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
-    <p class="summary">{{ collaboration.summary }}</p>
-    <div class="paper-links"><a href="{{ collaboration.paper_url }}">Paper</a><a href="{{ collaboration.project_url }}">Project</a></div>
+  <article class="project-study project-collaboration" id="acp">
+    <figure class="project-media">
+      <div class="project-frame">{% include collaboration-media.html paper=collaboration %}</div>
+      <figcaption>Hardware experiment · {{ collaboration.venue }} {{ collaboration.year }}</figcaption>
+    </figure>
+    <div class="project-collaboration-copy">
+      <p class="project-meta">{{ collaboration.year }} · {{ collaboration.venue }} · {{ collaboration.status }} · <span class="author-role">Coauthor</span></p>
+      <h3><a href="{{ collaboration.paper_url }}">{{ collaboration.title }}</a></h3>
+      <p class="authors">{% for author in collaboration.authors %}{% if author == 'Zewei Zhang' %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+      <p class="summary">{{ collaboration.summary }}</p>
+      <div class="paper-links"><a href="{{ collaboration.paper_url }}">Paper</a><a href="{{ collaboration.project_url }}">Project</a></div>
+    </div>
   </article>
 </section>
 <section class="project-earlier" aria-labelledby="earlier-projects-title">

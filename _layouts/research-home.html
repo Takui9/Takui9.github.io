@@ -81,7 +81,10 @@
   <section class="collaborations section wrap" aria-labelledby="collaborations-title">
     <h2 id="collaborations-title">Collaborative work</h2>
     {% assign collaboration = site.data.research.papers | where: 'id', 'acp' | first %}
-    <article class="collaboration">{% include research-record.html paper=collaboration context='home' %}</article>
+    <article class="publication collaboration" id="acp">
+      {% include collaboration-media.html paper=collaboration %}
+      <div class="publication-copy">{% include research-record.html paper=collaboration context='home' show_role=true %}</div>
+    </article>
   </section>
 
   <section class="earlier section wrap" aria-labelledby="earlier-title">
