@@ -498,7 +498,7 @@ and gave post-merge approval with no changes. Review remains image/source based;
 browser visual testing is unavailable.
 
 
-## Robot platforms — implementation review
+## Robot platforms — published and post-merge approved
 
 User requested five platforms at the end of Home: Unitree G1, Unitree Go1,
 ANYmal-D, UR10 and Crazyflie, explicitly confirming UR10 use during BMW. The
@@ -515,3 +515,13 @@ MP4 files are unchanged. Final Astra review is in progress.
 Astra approved all five real images, generated Home, responsive CSS and links
 without required changes. His optional credit clarification was adopted:
 Unitree (G1 via Funduino). Preparing the main-branch release.
+
+Published source `a158f90e27bb`, build `98763b7b9197`. Source workflow
+https://github.com/Takui9/Takui9.github.io/actions/runs/42576760131 and Pages
+https://github.com/Takui9/Takui9.github.io/actions/runs/42576877188 succeeded.
+All eight public HTML pages, Home component/shared CSS and five robot images
+match the approved production build. All 38 linked local resources return 200.
+Astra independently checked the fresh public Home, CSS and all five images,
+confirmed the placement, names, work links and precise credits, and gave
+post-merge approval without changes. Review is image/source based; browser
+visual testing remains unavailable.

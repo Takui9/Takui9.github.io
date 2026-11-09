@@ -507,3 +507,12 @@ Production generation passed. Eight pages passed structural/local-link/anchor
 checks, the other seven HTML pages are byte-identical to the previous release,
 and original video files are unchanged. Review uses actual image files and
 HTML/CSS; browser visual testing is unavailable.
+
+Published from `a158f90e27bb` in build `98763b7b9197`.
+[Source workflow 42576760131](https://github.com/Takui9/Takui9.github.io/actions/runs/42576760131)
+and [Pages deployment 42576877188](https://github.com/Takui9/Takui9.github.io/actions/runs/42576877188)
+succeeded.
+All eight public HTML pages, Home component/shared CSS and five robot images
+match the approved production build. All 38 linked local resources return 200.
+Astra independently approved the fresh public Home, CSS and all five image
+files after merge with no further changes.
