@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>{% include research-head.html %}<link rel="stylesheet" href="{{ '/assets/css/about-timeline.css' | relative_url }}"></head>
+<head>{% include research-head.html %}<link rel="stylesheet" href="{{ '/assets/css/about-timeline.css' | relative_url }}"><link rel="stylesheet" href="{{ '/assets/css/robot-platforms.css' | relative_url }}"></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {% include research-nav.html %}
@@ -90,6 +90,24 @@
   <section class="earlier section wrap" aria-labelledby="earlier-title">
     <h2 id="earlier-title">Earlier projects</h2>
     <ul><li><a href="{{ '/cpg_rl.html' | relative_url }}">Reinforcement learning for quadruped locomotion with CPGs</a></li><li><a href="https://www.youtube.com/watch?v=Zbv3JhjAxHA">Drone navigation with onboard sensors</a></li></ul>
+  </section>
+
+  <section class="robot-platforms section wrap" id="robot-platforms" aria-labelledby="robot-platforms-title">
+    <h2 id="robot-platforms-title">Robot platforms</h2>
+    <ul class="platform-grid" role="list">
+      {% for platform in site.data.robot_platforms.platforms %}
+      <li>
+        <figure class="platform">
+          <img src="{{ platform.image | relative_url }}" alt="{{ platform.alt | escape }}" width="600" height="450" loading="lazy" decoding="async">
+          <figcaption>
+            <h3>{{ platform.name }}</h3>
+            <p><a href="{% if platform.work_url contains "://" %}{{ platform.work_url }}{% else %}{{ platform.work_url | relative_url }}{% endif %}">{{ platform.work }}</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="platform-image-credits">Images: {% for credit in site.data.robot_platforms.credits %}<a href="{{ credit.url }}">{{ credit.name }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}.</p>
   </section>
 </main>
 {% include research-footer.html %}

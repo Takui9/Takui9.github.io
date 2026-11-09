@@ -496,3 +496,22 @@ Astra independently reviewed the fresh public Home/Projects HTML, component CSS
 and real image, confirmed their byte-for-byte match to the approved version,
 and gave post-merge approval with no changes. Review remains image/source based;
 browser visual testing is unavailable.
+
+
+## Robot platforms — implementation review
+
+User requested five platforms at the end of Home: Unitree G1, Unitree Go1,
+ANYmal-D, UR10 and Crazyflie, explicitly confirming UR10 use during BMW. The
+first three follow the verified research projects; the existing drone project
+provides the navigation context for Crazyflie. Astra recommended five/three/two
+columns with contained white-background images, platform names and one short
+work caption, after Earlier projects and before the footer. Root implemented
+the data-driven Home-only section; final image and production checks are next.
+
+Five final device images are normalized without altering robot structures.
+Production build passed. All eight pages passed structure, local-resource and
+fragment checks; seven unaffected HTML pages are byte-identical, and original
+MP4 files are unchanged. Final Astra review is in progress.
+Astra approved all five real images, generated Home, responsive CSS and links
+without required changes. His optional credit clarification was adopted:
+Unitree (G1 via Funduino). Preparing the main-branch release.

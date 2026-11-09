@@ -480,3 +480,30 @@ succeeded. All eight public HTML pages, component/shared CSS and original image
 match the approved build; all 32 linked local resources return 200.
 Astra independently approved the fresh public Home/Projects/CSS/image snapshot
 after merge, with no further changes.
+
+
+## Home robot platforms
+
+The final Home section, after Earlier projects and before the footer, lists the
+five platforms requested by Zewei: Unitree G1, Unitree Go1, ANYmal-D, UR10 and
+Crazyflie. `_data/robot_platforms.yml` stores their names, concise work captions,
+related-work links and image provenance. The first three link to the corresponding
+Projects anchors. UR10 links to Research experience with Teleoperation · BMW,
+based on Zewei’s explicit confirmation. Crazyflie links to the existing drone
+navigation video from `myprojects_zewei.html`; no additional achievements are
+claimed.
+
+Astra recommended a quiet five-column row, three columns at <=900px and two at
+<=600px, with no cards, animation or product parameters. Home-only
+`assets/css/robot-platforms.css` controls the section. Five local 600×450 JPEGs
+use white canvases, contained complete devices and matching padding. Only empty
+outer margins, sizing and format were adjusted; robot structures are unchanged.
+G1 and ANYmal-D are manufacturer product images mirrored by Funduino and Adeptor;
+Go1 and Crazyflie come from Unitree and Bitcraze. UR10 is extracted from the
+official legacy UR10 technical sheet, rather than an UR10e image. Visible image
+credits and exact source URLs are retained.
+
+Production generation passed. Eight pages passed structural/local-link/anchor
+checks, the other seven HTML pages are byte-identical to the previous release,
+and original video files are unchanged. Review uses actual image files and
+HTML/CSS; browser visual testing is unavailable.
