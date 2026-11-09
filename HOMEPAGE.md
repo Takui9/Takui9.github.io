@@ -472,3 +472,11 @@ are reused, with matched media sizing and padding. Papers and all other HTML
 pages remain byte-identical, and original MP4 files are unchanged. Astra
 approved the actual frame, production HTML and responsive CSS before release.
 Review is source/image based; browser visual testing is unavailable.
+
+Published from `800189e30a5a` in build `f31616ea00c7`;
+[Source workflow 42558215588](https://github.com/Takui9/Takui9.github.io/actions/runs/42558215588)
+and [Pages deployment 42558289107](https://github.com/Takui9/Takui9.github.io/actions/runs/42558289107)
+succeeded. All eight public HTML pages, component/shared CSS and original image
+match the approved build; all 32 linked local resources return 200.
+Astra independently approved the fresh public Home/Projects/CSS/image snapshot
+after merge, with no further changes.

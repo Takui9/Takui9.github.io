@@ -472,7 +472,7 @@ About timeline publication completed:
   original user PDF remains untouched outside the repository.
 
 
-## ACP media alignment — implementation review
+## ACP media alignment — published and post-merge approved
 
 Astra recommended matching the existing Home publication grid and Projects study
 grid, while retaining the separate collaboration headings, full author list,
@@ -485,3 +485,14 @@ Production build and eight-page structure/local-link checks passed. The six
 unaffected pages are byte-identical to the previous approved release, and all
 original MP4 files are unchanged. Astra approved the generated HTML/CSS and
 actual final image without revisions. Publishing via the existing main workflow.
+
+ACP release completed from source `800189e30a5a`, published build
+`f31616ea00c7`. Source workflow
+https://github.com/Takui9/Takui9.github.io/actions/runs/42558215588 and Pages
+https://github.com/Takui9/Takui9.github.io/actions/runs/42558289107 succeeded.
+All eight public HTML pages, component/shared CSS and original image match the
+approved production build. All 32 linked local resources return 200.
+Astra independently reviewed the fresh public Home/Projects HTML, component CSS
+and real image, confirmed their byte-for-byte match to the approved version,
+and gave post-merge approval with no changes. Review remains image/source based;
+browser visual testing is unavailable.
