@@ -525,3 +525,19 @@ Astra independently checked the fresh public Home, CSS and all five images,
 confirmed the placement, names, work links and precise credits, and gave
 post-merge approval without changes. Review is image/source based; browser
 visual testing remains unavailable.
+
+
+## Google Scholar and Contact — implementation review
+
+Added the exact Google Scholar profile supplied by Zewei to the Home personal
+links, using `scholar_userid: ofBIqOIAAAAJ`. Contact in the same row points to a
+new final Home section that displays `ctki49@gmail.com` as a mailto link. The
+Home footer keeps only the name, avoiding a duplicate contact anchor/email;
+other pages retain their original footer. No new styles or scripts are needed.
+Production and link checks are next.
+
+Production build and eight-page structure, resource and fragment checks passed.
+The Scholar URL exactly matches the supplied user ID, the Contact anchor is
+unique, and the email is visible with a mailto action. All seven other public
+HTML pages match byte-for-byte. Astra approved the generated Home and footer
+logic without revisions. Publishing through the existing main workflow.

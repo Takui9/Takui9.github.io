@@ -516,3 +516,20 @@ All eight public HTML pages, Home component/shared CSS and five robot images
 match the approved production build. All 38 linked local resources return 200.
 Astra independently approved the fresh public Home, CSS and all five image
 files after merge with no further changes.
+
+
+## Home Google Scholar and Contact
+
+The personal-link row now contains Google Scholar, LinkedIn, optional Twitter
+and Contact. Scholar uses Zewei’s supplied profile ID `ofBIqOIAAAAJ` from
+`_config.yml`, with `hl=en`. Contact links to the unique `#contact` section at
+the end of Home, after Robot platforms. The section displays the configured
+Gmail address directly as a mailto link. It uses the existing heading, section
+and link styles without extra scripts or forms. The Home footer retains the
+name only; other pages keep the original email footer and contact anchor.
+
+Production build and all eight pages’ structure/local-link checks passed. The
+seven other public HTML pages are byte-identical to the new build. Astra
+approved the generated Home, exact Scholar profile, visible email, unique
+anchor and footer condition without changes. Browser visual testing remains
+unavailable.
