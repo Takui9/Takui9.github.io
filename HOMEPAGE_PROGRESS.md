@@ -549,7 +549,7 @@ succeeded. All eight public pages match the approved production output. Astra
 independently reviewed the fresh public Home and gave post-merge approval.
 
 
-## Home explainer carousel — implementation review
+## Home explainer carousel — published and post-merge approved
 
 User requested click-selectable sliding explainers like zhihaocao.com. Root and
 Astra inspected the reference HTML/CSS/JS: native horizontal scroll-snap with
@@ -568,3 +568,13 @@ state/credits/captions. Astra requested one narrow-screen correction: fixed
 44px arrow widths and smaller selector gaps. It is implemented and rechecked.
 Astra approved deployment without further changes. Browser layout/real touch
 testing remains unavailable; DOM geometry is simulated.
+
+Carousel release completed from source `49aa23800151`, published build
+`72df8d7b4385`. Source workflow
+https://github.com/Takui9/Takui9.github.io/actions/runs/42971005730 and Pages
+https://github.com/Takui9/Takui9.github.io/actions/runs/42971107156 succeeded.
+All eight public pages and component CSS/JS v3 match the approved build. All
+42 linked local assets and external explainer video/poster resources return
+200. Astra independently checked the fresh public Home, CSS and JS and gave
+post-merge approval without changes. Browser layout/real touch testing remains
+unavailable; interaction geometry was simulated.

@@ -573,3 +573,11 @@ reduced motion. Seven other HTML pages remain byte-identical to the prior
 Scholar/Contact release. Astra approved the actual production files after a
 small narrow-screen spacing correction. Browser layout and real touch behavior
 remain untested because browser access is unavailable; DOM geometry is mocked.
+
+Carousel published from `49aa23800151` in build `72df8d7b4385`;
+[Source workflow 42971005730](https://github.com/Takui9/Takui9.github.io/actions/runs/42971005730)
+and [Pages deployment 42971107156](https://github.com/Takui9/Takui9.github.io/actions/runs/42971107156)
+succeeded. All eight public pages and component CSS/JS v3 match the approved
+build. All 42 local assets and external explainer film/poster resources return
+200. Astra independently approved the public three-card carousel and assets
+after merge, with no further changes.
