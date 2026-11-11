@@ -538,3 +538,38 @@ Scholar/Contact published from `8ef32aae2cb0` in build `eadc21fe8c6c`;
 [Pages deployment 42969752662](https://github.com/Takui9/Takui9.github.io/actions/runs/42969752662)
 succeeded. Eight public pages match the approved output. Astra independently
 approved the public Scholar, Contact anchor and mailto implementation.
+
+
+## Current Home explainer carousel
+
+This replaces the earlier single-player source-swapping feature. Root and Astra
+reviewed the reference at https://zhihaocao.com/: one complete horizontal
+scroll-snap card per view, with manual selection. Home now renders all three
+existing explainers as separate articles, ordered Humanoid / Quadruped / CPG,
+with their own native video, fixed metadata/copy, captions, detail link and
+attribution. The directory link belongs to the section heading. No paper text,
+video asset or explainer detail page changed.
+
+CSS defaults to a normal vertical list. After successful initialization, JS
+enhances it to a native horizontally scrollable carousel. Each card retains
+the established 7:5 media/text layout, stacking media first at <=800px. A pale
+background and 6px corner radius group the card without shadows. Below it,
+44px previous/next controls flank three named selectors; the edges disable
+instead of looping. At <=600px gaps shrink to fit 320px screens. Source CSS
+and JS load with `?v=3` to avoid the shared cache retaining the prior feature.
+
+No autoplay or timer rotation is used. Choosing or horizontally scrolling
+pauses playback; each video retains its own source, subtitle track and playhead.
+The settled active slide updates the selected button, inert/aria-hidden state
+and a polite announcement. Keyboard navigation applies only to the carousel
+viewport and controls, preserving native video seeking/volume keys. Resize and
+reduced-motion changes realign the active card without smooth movement.
+
+Production generation, eight-page HTML/assets/anchor checks and both source and
+minified-JS DOM interaction simulations passed. They cover rapid Next/Next,
+mid-scroll reselection, scrollend/settle consistency, no autoplay, same-item
+reselection, source/track/playhead retention, focus, scoped keys, resize and
+reduced motion. Seven other HTML pages remain byte-identical to the prior
+Scholar/Contact release. Astra approved the actual production files after a
+small narrow-screen spacing correction. Browser layout and real touch behavior
+remain untested because browser access is unavailable; DOM geometry is mocked.

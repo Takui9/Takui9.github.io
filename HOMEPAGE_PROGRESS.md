@@ -547,3 +547,24 @@ Source run https://github.com/Takui9/Takui9.github.io/actions/runs/42969652320
 and Pages https://github.com/Takui9/Takui9.github.io/actions/runs/42969752662
 succeeded. All eight public pages match the approved production output. Astra
 independently reviewed the fresh public Home and gave post-merge approval.
+
+
+## Home explainer carousel — implementation review
+
+User requested click-selectable sliding explainers like zhihaocao.com. Root and
+Astra inspected the reference HTML/CSS/JS: native horizontal scroll-snap with
+complete media/text cards. Astra recommended Home-only enhancement, preserving
+the directory and explainer detail pages. The new component has three full
+cards, default Humanoid, a title-level directory link, previous/next arrows
+and three labeled selectors. Static fallback lists all three cards. Videos,
+reviewed copy, CPG captions and attribution stay attached to their own cards;
+no automatic rotation or playback. Production and interaction checks are next.
+
+Production and eight-page structure/link/anchor checks passed; all seven other
+pages remain byte-identical. Source and production JS passed interaction
+simulations in normal and reduced-motion modes, including rapid Next/Next and
+mid-scroll CPG selection, focus, native-video key preservation and fixed media
+state/credits/captions. Astra requested one narrow-screen correction: fixed
+44px arrow widths and smaller selector gaps. It is implemented and rechecked.
+Astra approved deployment without further changes. Browser layout/real touch
+testing remains unavailable; DOM geometry is simulated.

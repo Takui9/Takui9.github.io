@@ -1,20 +1,36 @@
-/* Featured paper explainer on the homepage. */
-.home-explainer { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: 'media copy'; gap: 40px; align-items: center; }
-.home-explainer-copy { grid-area: copy; min-width: 0; }
-.home-explainer-copy h2 { margin-bottom: 16px; }
+/* Three complete explainers, enhanced into a manually controlled carousel. */
+.home-explainer-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px 24px; margin-bottom: 22px; }
+.home-explainer-heading h2 { margin: 0; }
+.home-explainer-heading > a { flex: none; font-size: 13px; }
+.home-explainer-track { display: grid; gap: 24px; }
+.home-explainer-slide { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; gap: 30px; padding: 24px; background: #f7f8fa; border-radius: 6px; min-width: 0; }
+.home-explainer-copy { min-width: 0; }
 .home-explainer-copy h3 { font-size: 23px; margin-bottom: 12px; }
 .home-explainer-description { font-size: 15px; color: #4b5661; max-width: 48ch; }
-.home-explainer-links { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 20px; font-size: 13px; }
-.home-explainer-media { grid-area: media; margin: 0; min-width: 0; }
-.home-explainer-media video { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: contain; background: #f1f3f4; border-radius: 3px; }
+.home-explainer-detail { display: inline-block; margin-top: 20px; font-size: 13px; }
+.home-explainer-media { margin: 0; min-width: 0; }
+.home-explainer-media video { width: 100%; height: auto; aspect-ratio: 16/9; object-fit: contain; background: #eef1f4; border-radius: 3px; }
 .home-explainer-media figcaption { margin-top: 9px; color: var(--muted); font-size: 11px; }
-
+.home-explainer.is-carousel .home-explainer-track { position: relative; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+.home-explainer.is-carousel .home-explainer-track::-webkit-scrollbar { display: none; }
+.home-explainer.is-carousel .home-explainer-slide { flex: 0 0 100%; scroll-snap-align: start; scroll-snap-stop: always; }
+.home-explainer-track:focus-visible { outline: 2px solid var(--blue); outline-offset: 5px; }
+.home-explainer-controls { display: flex; justify-content: center; align-items: center; gap: 18px; margin-top: 22px; }
+.home-explainer-controls[hidden] { display: none; }
+.home-explainer-selector { display: flex; align-items: center; gap: 20px; }
+.home-explainer-selector button { min-height: 44px; padding: 8px 0; color: var(--muted); background: transparent; border: 0; border-bottom: 1px solid transparent; font-size: 12px; }
+.home-explainer-selector button[aria-pressed='true'] { color: var(--blue); border-bottom-color: var(--blue); }
+.home-explainer-arrow { flex: 0 0 44px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; color: var(--blue); background: transparent; border: 1px solid var(--line); border-radius: 50%; font-size: 18px; }
+.home-explainer-arrow:disabled { color: #a2aab3; cursor: default; }
+.home-explainer-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 800px) {
-  .home-explainer { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'copy' 'media'; gap: 22px; }
+  .home-explainer-slide { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .home-explainer-copy h3 { font-size: 22px; }
   .home-explainer-description { max-width: 65ch; }
 }
-.home-explainer-selector { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 18px; }
-.home-explainer-selector[hidden] { display: none; }
-.home-explainer-selector button { padding: 3px 0; color: var(--muted); background: transparent; border: 0; border-bottom: 1px solid transparent; font-size: 12px; }
-.home-explainer-selector button[aria-pressed='true'] { color: var(--blue); border-bottom-color: var(--blue); }
+@media (max-width: 600px) {
+  .home-explainer-heading { flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .home-explainer-slide { padding: 18px; }
+  .home-explainer-controls { gap: 8px; }
+  .home-explainer-selector { gap: 10px; }
+}
