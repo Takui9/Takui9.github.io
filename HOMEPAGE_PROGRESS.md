@@ -527,7 +527,7 @@ post-merge approval without changes. Review is image/source based; browser
 visual testing remains unavailable.
 
 
-## Google Scholar and Contact — implementation review
+## Google Scholar and Contact — published and post-merge approved
 
 Added the exact Google Scholar profile supplied by Zewei to the Home personal
 links, using `scholar_userid: ofBIqOIAAAAJ`. Contact in the same row points to a
@@ -541,3 +541,9 @@ The Scholar URL exactly matches the supplied user ID, the Contact anchor is
 unique, and the email is visible with a mailto action. All seven other public
 HTML pages match byte-for-byte. Astra approved the generated Home and footer
 logic without revisions. Publishing through the existing main workflow.
+
+Scholar/Contact published from source `8ef32aae2cb0`, build `eadc21fe8c6c`.
+Source run https://github.com/Takui9/Takui9.github.io/actions/runs/42969652320
+and Pages https://github.com/Takui9/Takui9.github.io/actions/runs/42969752662
+succeeded. All eight public pages match the approved production output. Astra
+independently reviewed the fresh public Home and gave post-merge approval.
